@@ -19,25 +19,25 @@ import javax.swing.JTextField;
 		private static final long serialVersionUID = 1L;
 		private JPanel contentPane;
 		private JLabel lblHranaIPie;
-		private JTextField textField;
+		private JTextField textFieldHrana;
 		private JLabel lblOdeaIObua;
-		private JTextField textField_1;
+		private JTextField textFieldOdeca;
 		private JLabel lblBrigaOSebi;
-		private JTextField textField_2;
+		private JTextField textFieldBriga;
 		private JLabel lblTrokoviStanovanja;
-		private JTextField textField_3;
+		private JTextField textFieldStanovanje;
 		private JLabel lblMeseniRauni;
-		private JTextField textField_4;
+		private JTextField textFieldMesecni;
 		private JLabel lblSportIRekreacija;
-		private JTextField textField_5;
+		private JTextField textFieldRekreacija;
 		private JLabel lblPrevoz;
-		private JTextField textField_6;
+		private JTextField textFieldPrevoz;
 		private JLabel lblEdukacija;
-		private JTextField textField_7;
+		private JTextField textFieldEdukacija;
 		private JLabel lblIzlasci;
-		private JTextField textField_8;
+		private JTextField textFieldIzlasci;
 		private JLabel lblLuksuz;
-		private JTextField textField_9;
+		private JTextField textFieldLuksuz;
 
 		/**
 		 * Launch the application.
@@ -67,25 +67,25 @@ import javax.swing.JTextField;
 			setContentPane(contentPane);
 			contentPane.setLayout(new GridLayout(0, 2, 10, 7));
 			contentPane.add(getLblHranaIPie());
-			contentPane.add(getTextField());
+			contentPane.add(getTextFieldHrana());
 			contentPane.add(getLblOdeaIObua());
-			contentPane.add(getTextField_1());
+			contentPane.add(getTextFieldOdeca());
 			contentPane.add(getLblBrigaOSebi());
-			contentPane.add(getTextField_2());
+			contentPane.add(getTextFieldBriga());
 			contentPane.add(getLblTrokoviStanovanja());
-			contentPane.add(getTextField_3());
+			contentPane.add(getTextFieldStanovanje());
 			contentPane.add(getLblMeseniRauni());
-			contentPane.add(getTextField_4());
+			contentPane.add(getTextFieldMesecni());
 			contentPane.add(getLblSportIRekreacija());
-			contentPane.add(getTextField_5());
+			contentPane.add(getTextFieldRekreacija());
 			contentPane.add(getLblPrevoz());
-			contentPane.add(getTextField_6());
+			contentPane.add(getTextFieldPrevoz());
 			contentPane.add(getLblEdukacija());
-			contentPane.add(getTextField_7());
+			contentPane.add(getTextFieldEdukacija());
 			contentPane.add(getLblIzlasci());
-			contentPane.add(getTextField_8());
+			contentPane.add(getTextFieldIzlasci());
 			contentPane.add(getLblLuksuz());
-			contentPane.add(getTextField_9());
+			contentPane.add(getTextFieldLuksuz());
 		}
 		private JLabel getLblHranaIPie() {
 			if (lblHranaIPie == null) {
@@ -93,12 +93,12 @@ import javax.swing.JTextField;
 			}
 			return lblHranaIPie;
 		}
-		private JTextField getTextField() {
-			if (textField == null) {
-				textField = new JTextField();
-				textField.setColumns(10);
+		private JTextField getTextFieldHrana() {
+			if (textFieldHrana == null) {
+				textFieldHrana = new JTextField();
+				textFieldHrana.setColumns(10);
 			}
-			return textField;
+			return textFieldHrana;
 		}
 		private JLabel getLblOdeaIObua() {
 			if (lblOdeaIObua == null) {
@@ -106,12 +106,12 @@ import javax.swing.JTextField;
 			}
 			return lblOdeaIObua;
 		}
-		private JTextField getTextField_1() {
-			if (textField_1 == null) {
-				textField_1 = new JTextField();
-				textField_1.setColumns(10);
+		private JTextField getTextFieldOdeca() {
+			if (textFieldOdeca == null) {
+				textFieldOdeca = new JTextField();
+				textFieldOdeca.setColumns(10);
 			}
-			return textField_1;
+			return textFieldOdeca;
 		}
 		private JLabel getLblBrigaOSebi() {
 			if (lblBrigaOSebi == null) {
@@ -119,12 +119,12 @@ import javax.swing.JTextField;
 			}
 			return lblBrigaOSebi;
 		}
-		private JTextField getTextField_2() {
-			if (textField_2 == null) {
-				textField_2 = new JTextField();
-				textField_2.setColumns(10);
+		private JTextField getTextFieldBriga() {
+			if (textFieldBriga == null) {
+				textFieldBriga = new JTextField();
+				textFieldBriga.setColumns(10);
 			}
-			return textField_2;
+			return textFieldBriga;
 		}
 		private JLabel getLblTrokoviStanovanja() {
 			if (lblTrokoviStanovanja == null) {
@@ -132,12 +132,12 @@ import javax.swing.JTextField;
 			}
 			return lblTrokoviStanovanja;
 		}
-		private JTextField getTextField_3() {
-			if (textField_3 == null) {
-				textField_3 = new JTextField();
-				textField_3.setColumns(10);
+		private JTextField getTextFieldStanovanje() {
+			if (textFieldStanovanje == null) {
+				textFieldStanovanje = new JTextField();
+				textFieldStanovanje.setColumns(10);
 			}
-			return textField_3;
+			return textFieldStanovanje;
 		}
 		private JLabel getLblMeseniRauni() {
 			if (lblMeseniRauni == null) {
@@ -145,12 +145,12 @@ import javax.swing.JTextField;
 			}
 			return lblMeseniRauni;
 		}
-		private JTextField getTextField_4() {
-			if (textField_4 == null) {
-				textField_4 = new JTextField();
-				textField_4.setColumns(10);
+		private JTextField getTextFieldMesecni() {
+			if (textFieldMesecni == null) {
+				textFieldMesecni = new JTextField();
+				textFieldMesecni.setColumns(10);
 			}
-			return textField_4;
+			return textFieldMesecni;
 		}
 		private JLabel getLblSportIRekreacija() {
 			if (lblSportIRekreacija == null) {
@@ -158,12 +158,12 @@ import javax.swing.JTextField;
 			}
 			return lblSportIRekreacija;
 		}
-		private JTextField getTextField_5() {
-			if (textField_5 == null) {
-				textField_5 = new JTextField();
-				textField_5.setColumns(10);
+		private JTextField getTextFieldRekreacija() {
+			if (textFieldRekreacija == null) {
+				textFieldRekreacija = new JTextField();
+				textFieldRekreacija.setColumns(10);
 			}
-			return textField_5;
+			return textFieldRekreacija;
 		}
 		private JLabel getLblPrevoz() {
 			if (lblPrevoz == null) {
@@ -171,12 +171,12 @@ import javax.swing.JTextField;
 			}
 			return lblPrevoz;
 		}
-		private JTextField getTextField_6() {
-			if (textField_6 == null) {
-				textField_6 = new JTextField();
-				textField_6.setColumns(10);
+		private JTextField getTextFieldPrevoz() {
+			if (textFieldPrevoz == null) {
+				textFieldPrevoz = new JTextField();
+				textFieldPrevoz.setColumns(10);
 			}
-			return textField_6;
+			return textFieldPrevoz;
 		}
 		private JLabel getLblEdukacija() {
 			if (lblEdukacija == null) {
@@ -184,12 +184,12 @@ import javax.swing.JTextField;
 			}
 			return lblEdukacija;
 		}
-		private JTextField getTextField_7() {
-			if (textField_7 == null) {
-				textField_7 = new JTextField();
-				textField_7.setColumns(10);
+		private JTextField getTextFieldEdukacija() {
+			if (textFieldEdukacija == null) {
+				textFieldEdukacija = new JTextField();
+				textFieldEdukacija.setColumns(10);
 			}
-			return textField_7;
+			return textFieldEdukacija;
 		}
 		private JLabel getLblIzlasci() {
 			if (lblIzlasci == null) {
@@ -197,12 +197,12 @@ import javax.swing.JTextField;
 			}
 			return lblIzlasci;
 		}
-		private JTextField getTextField_8() {
-			if (textField_8 == null) {
-				textField_8 = new JTextField();
-				textField_8.setColumns(10);
+		private JTextField getTextFieldIzlasci() {
+			if (textFieldIzlasci == null) {
+				textFieldIzlasci = new JTextField();
+				textFieldIzlasci.setColumns(10);
 			}
-			return textField_8;
+			return textFieldIzlasci;
 		}
 		private JLabel getLblLuksuz() {
 			if (lblLuksuz == null) {
@@ -210,12 +210,12 @@ import javax.swing.JTextField;
 			}
 			return lblLuksuz;
 		}
-		private JTextField getTextField_9() {
-			if (textField_9 == null) {
-				textField_9 = new JTextField();
-				textField_9.setColumns(10);
+		private JTextField getTextFieldLuksuz() {
+			if (textFieldLuksuz == null) {
+				textFieldLuksuz = new JTextField();
+				textFieldLuksuz.setColumns(10);
 			}
-			return textField_9;
+			return textFieldLuksuz;
 		}
 	}
 
