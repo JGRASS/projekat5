@@ -111,7 +111,7 @@ public class GlavniProzor extends JFrame {
 			btnBudget = new JButton("Bud\u017Eet");
 			btnBudget.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					prikaziTroskoviProzor();
+					prikaziBudzetProzor();
 				}
 			});
 		}
@@ -120,6 +120,11 @@ public class GlavniProzor extends JFrame {
 	private JButton getBtnTroskovi() {
 		if (btnTroskovi == null) {
 			btnTroskovi = new JButton("Tro\u0161kovi");
+			btnTroskovi.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					prikaziTroskoviProzor();
+				}
+			});
 		}
 		return btnTroskovi;
 	}
@@ -136,9 +141,14 @@ public class GlavniProzor extends JFrame {
 		return mnPomo;
 	}
 	
-	private void prikaziTroskoviProzor() {
+	private void prikaziBudzetProzor() {
 		Budzet prozor = new Budzet ();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 }
+	private void prikaziTroskoviProzor() {
+		Troskovi prozor = new Troskovi ();
+		prozor.setLocationRelativeTo(contentPane);
+		prozor.setVisible(true);
+	}
 }
