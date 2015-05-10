@@ -1,5 +1,8 @@
 package gui;
 
+import gui.budzet.Budzet;
+import gui.troskovi.Troskovi;
+
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;

@@ -1,4 +1,4 @@
-package gui;
+package gui.troskovi;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -12,7 +12,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class TroskoviMesecniRacuni extends JFrame {
+import sistem.utils.UtilsTroskovi;
+
+import java.awt.GridLayout;
+
+public class TroskoviEdukacija extends JFrame {
 
 	/**
 	 * 
@@ -20,9 +24,13 @@ public class TroskoviMesecniRacuni extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel lblIznos;
-	private JTextField textField;
+	private JTextField textFieldIznosEdu;
 	private JButton btnGotovo;
 	private JButton btnOdustani;
+	private JLabel label;
+	private JLabel label_1;
+	private JLabel lblNewLabel;
+	private JTextField textFieldNazivEdu;
 
 	/**
 	 * Launch the application.
@@ -31,7 +39,7 @@ public class TroskoviMesecniRacuni extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TroskoviMesecniRacuni frame = new TroskoviMesecniRacuni();
+					TroskoviEdukacija frame = new TroskoviEdukacija();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,16 +51,21 @@ public class TroskoviMesecniRacuni extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TroskoviMesecniRacuni() {
+	public TroskoviEdukacija() {
+		setTitle("Edukacija");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 231, 161);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		contentPane.setLayout(new GridLayout(0, 2, 12, 0));
+		contentPane.add(getLblNewLabel());
 		contentPane.add(getLblIznos());
+		contentPane.add(getTextField_1_1());
 		contentPane.add(getTextField_1());
+		contentPane.add(getLabel());
+		contentPane.add(getLabel_1());
 		contentPane.add(getBtnGotovo());
 		contentPane.add(getBtnOdustani());}
 
@@ -64,16 +77,21 @@ public class TroskoviMesecniRacuni extends JFrame {
 		return lblIznos;
 	}
 	private JTextField getTextField_1() {
-		if (textField == null) {
-			textField = new JTextField();
-			textField.setBounds(10, 36, 196, 23);
-			textField.setColumns(10);
+		if (textFieldIznosEdu == null) {
+			textFieldIznosEdu = new JTextField();
+			textFieldIznosEdu.setBounds(10, 36, 196, 23);
+			textFieldIznosEdu.setColumns(10);
 		}
-		return textField;
+		return textFieldIznosEdu;
 	}
 	private JButton getBtnGotovo() {
 		if (btnGotovo == null) {
 			btnGotovo = new JButton("Gotovo");
+			btnGotovo.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					napraviObjekat();
+				}
+			});
 			btnGotovo.setBounds(10, 70, 84, 23);
 		}
 		return btnGotovo;
@@ -89,5 +107,34 @@ public class TroskoviMesecniRacuni extends JFrame {
 			btnOdustani.setBounds(93, 70, 113, 23);
 		}
 		return btnOdustani;
+	}
+	private JLabel getLabel() {
+		if (label == null) {
+			label = new JLabel("");
+		}
+		return label;
+	}
+	private JLabel getLabel_1() {
+		if (label_1 == null) {
+			label_1 = new JLabel("");
+		}
+		return label_1;
+	}
+	private JLabel getLblNewLabel() {
+		if (lblNewLabel == null) {
+			lblNewLabel = new JLabel("Naziv");
+		}
+		return lblNewLabel;
+	}
+	private JTextField getTextField_1_1() {
+		if (textFieldNazivEdu == null) {
+			textFieldNazivEdu = new JTextField();
+			textFieldNazivEdu.setColumns(10);
+		}
+		return textFieldNazivEdu;
+	}
+	
+	public void napraviObjekat(){
+		UtilsTroskovi.napraviObjekatEdu(textFieldNazivEdu, textFieldIznosEdu);
 	}
 }

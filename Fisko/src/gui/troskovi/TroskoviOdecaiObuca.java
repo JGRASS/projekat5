@@ -1,4 +1,4 @@
-package gui;
+package gui.troskovi;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -12,6 +12,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import sistem.utils.UtilsTroskovi;
+
+import java.awt.GridLayout;
+
 public class TroskoviOdecaiObuca extends JFrame {
 
 	/**
@@ -20,9 +24,13 @@ public class TroskoviOdecaiObuca extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel lblIznos;
-	private JTextField textField;
+	private JTextField textFieldIznosOdIObuca;
 	private JButton btnGotovo;
 	private JButton btnOdustani;
+	private JLabel label;
+	private JLabel label_1;
+	private JLabel lblNaziv;
+	private JTextField textFieldNazivOdIObuca;
 
 
 	/**
@@ -45,15 +53,21 @@ public class TroskoviOdecaiObuca extends JFrame {
 	 * Create the frame.
 	 */
 	public TroskoviOdecaiObuca() {
+		setTitle("Odeća i obuća");
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 231, 161);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		contentPane.setLayout(new GridLayout(0, 2, 12, 0));
+		contentPane.add(getLblNaziv());
 		contentPane.add(getLblIznos());
+		contentPane.add(getTextField_1_1());
 		contentPane.add(getTextField_1());
+		contentPane.add(getLabel());
+		contentPane.add(getLabel_1());
 		contentPane.add(getBtnGotovo());
 		contentPane.add(getBtnOdustani());
 	}
@@ -65,16 +79,21 @@ public class TroskoviOdecaiObuca extends JFrame {
 			return lblIznos;
 		}
 		private JTextField getTextField_1() {
-			if (textField == null) {
-				textField = new JTextField();
-				textField.setBounds(10, 36, 196, 23);
-				textField.setColumns(10);
+			if (textFieldIznosOdIObuca == null) {
+				textFieldIznosOdIObuca = new JTextField();
+				textFieldIznosOdIObuca.setBounds(10, 36, 196, 23);
+				textFieldIznosOdIObuca.setColumns(10);
 			}
-			return textField;
+			return textFieldIznosOdIObuca;
 		}
 		private JButton getBtnGotovo() {
 			if (btnGotovo == null) {
 				btnGotovo = new JButton("Gotovo");
+				btnGotovo.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						napraviObjekat();
+					}
+				});
 				btnGotovo.setBounds(10, 70, 84, 23);
 			}
 			return btnGotovo;
@@ -91,4 +110,33 @@ public class TroskoviOdecaiObuca extends JFrame {
 			}
 			return btnOdustani;
 		}
+	private JLabel getLabel() {
+		if (label == null) {
+			label = new JLabel("");
+		}
+		return label;
 	}
+	private JLabel getLabel_1() {
+		if (label_1 == null) {
+			label_1 = new JLabel("");
+		}
+		return label_1;
+	}
+	private JLabel getLblNaziv() {
+		if (lblNaziv == null) {
+			lblNaziv = new JLabel("Naziv");
+		}
+		return lblNaziv;
+	}
+	private JTextField getTextField_1_1() {
+		if (textFieldNazivOdIObuca == null) {
+			textFieldNazivOdIObuca = new JTextField();
+			textFieldNazivOdIObuca.setColumns(10);
+		}
+		return textFieldNazivOdIObuca;
+	}
+	
+	public void napraviObjekat(){
+		UtilsTroskovi.napraviObjekatOdIObuca(textFieldNazivOdIObuca, textFieldIznosOdIObuca);
+	}
+}

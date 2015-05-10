@@ -1,4 +1,4 @@
-package gui;
+package gui.budzet;
 
 	import java.awt.EventQueue;
 

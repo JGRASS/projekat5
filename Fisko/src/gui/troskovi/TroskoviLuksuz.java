@@ -1,19 +1,18 @@
-package gui;
+package gui.troskovi;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
 
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
-public class TroskoviBrigaOSebi extends JFrame {
+public class TroskoviLuksuz extends JFrame {
 
 	/**
 	 * 
@@ -21,9 +20,13 @@ public class TroskoviBrigaOSebi extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel lblIznos;
-	private JTextField textField;
+	private JTextField textFieldIznosLuksuz;
 	private JButton btnGotovo;
 	private JButton btnOdustani;
+	private JLabel label;
+	private JLabel label_1;
+	private JLabel lblNaziv;
+	private JTextField textFieldNazivLuksuz;
 
 	/**
 	 * Launch the application.
@@ -32,7 +35,7 @@ public class TroskoviBrigaOSebi extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TroskoviBrigaOSebi frame = new TroskoviBrigaOSebi();
+					TroskoviLuksuz frame = new TroskoviLuksuz();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,16 +47,23 @@ public class TroskoviBrigaOSebi extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TroskoviBrigaOSebi() {
+	public TroskoviLuksuz() {
+		setTitle("Luksuz");
+		setResizable(false);
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 231, 161);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		contentPane.setLayout(new GridLayout(0, 2, 12, 0));
+		contentPane.add(getLblNaziv());
 		contentPane.add(getLblIznos());
+		contentPane.add(getTextField_1_1());
 		contentPane.add(getTextField_1());
+		contentPane.add(getLabel());
+		contentPane.add(getLabel_1());
 		contentPane.add(getBtnGotovo());
 		contentPane.add(getBtnOdustani());}
 
@@ -65,16 +75,20 @@ public class TroskoviBrigaOSebi extends JFrame {
 		return lblIznos;
 	}
 	private JTextField getTextField_1() {
-		if (textField == null) {
-			textField = new JTextField();
-			textField.setBounds(10, 36, 196, 23);
-			textField.setColumns(10);
+		if (textFieldIznosLuksuz == null) {
+			textFieldIznosLuksuz = new JTextField();
+			textFieldIznosLuksuz.setBounds(10, 36, 196, 23);
+			textFieldIznosLuksuz.setColumns(10);
 		}
-		return textField;
+		return textFieldIznosLuksuz;
 	}
 	private JButton getBtnGotovo() {
 		if (btnGotovo == null) {
 			btnGotovo = new JButton("Gotovo");
+			btnGotovo.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
 			btnGotovo.setBounds(10, 70, 84, 23);
 		}
 		return btnGotovo;
@@ -90,5 +104,30 @@ public class TroskoviBrigaOSebi extends JFrame {
 			btnOdustani.setBounds(93, 70, 113, 23);
 		}
 		return btnOdustani;
+	}
+	private JLabel getLabel() {
+		if (label == null) {
+			label = new JLabel("");
+		}
+		return label;
+	}
+	private JLabel getLabel_1() {
+		if (label_1 == null) {
+			label_1 = new JLabel("");
+		}
+		return label_1;
+	}
+	private JLabel getLblNaziv() {
+		if (lblNaziv == null) {
+			lblNaziv = new JLabel("Naziv");
+		}
+		return lblNaziv;
+	}
+	private JTextField getTextField_1_1() {
+		if (textFieldNazivLuksuz == null) {
+			textFieldNazivLuksuz = new JTextField();
+			textFieldNazivLuksuz.setColumns(10);
+		}
+		return textFieldNazivLuksuz;
 	}
 }

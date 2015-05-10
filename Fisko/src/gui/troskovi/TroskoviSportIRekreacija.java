@@ -1,4 +1,4 @@
-package gui;
+package gui.troskovi;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -12,7 +12,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class TroskoviPrevoz extends JFrame {
+import sistem.utils.UtilsTroskovi;
+
+import java.awt.GridLayout;
+
+public class TroskoviSportIRekreacija extends JFrame {
 
 	/**
 	 * 
@@ -20,9 +24,13 @@ public class TroskoviPrevoz extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel lblIznos;
-	private JTextField textField;
+	private JTextField textFieldIznosSpIRekr;
 	private JButton btnGotovo;
 	private JButton btnOdustani;
+	private JLabel label;
+	private JLabel label_1;
+	private JLabel lblNaziv;
+	private JTextField textFieldNazivSpIRekr;
 
 	/**
 	 * Launch the application.
@@ -31,7 +39,7 @@ public class TroskoviPrevoz extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TroskoviPrevoz frame = new TroskoviPrevoz();
+					TroskoviSportIRekreacija frame = new TroskoviSportIRekreacija();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,16 +51,22 @@ public class TroskoviPrevoz extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TroskoviPrevoz() {
+	public TroskoviSportIRekreacija() {
+		setTitle("Sport i rekreacija");
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 231, 161);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		contentPane.setLayout(new GridLayout(0, 2, 12, 0));
+		contentPane.add(getLblNaziv());
 		contentPane.add(getLblIznos());
+		contentPane.add(getTextField_1_1());
 		contentPane.add(getTextField_1());
+		contentPane.add(getLabel());
+		contentPane.add(getLabel_1());
 		contentPane.add(getBtnGotovo());
 		contentPane.add(getBtnOdustani());}
 
@@ -64,16 +78,21 @@ public class TroskoviPrevoz extends JFrame {
 		return lblIznos;
 	}
 	private JTextField getTextField_1() {
-		if (textField == null) {
-			textField = new JTextField();
-			textField.setBounds(10, 36, 196, 23);
-			textField.setColumns(10);
+		if (textFieldIznosSpIRekr == null) {
+			textFieldIznosSpIRekr = new JTextField();
+			textFieldIznosSpIRekr.setBounds(10, 36, 196, 23);
+			textFieldIznosSpIRekr.setColumns(10);
 		}
-		return textField;
+		return textFieldIznosSpIRekr;
 	}
 	private JButton getBtnGotovo() {
 		if (btnGotovo == null) {
 			btnGotovo = new JButton("Gotovo");
+			btnGotovo.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					napraviObjekat();
+				}
+			});
 			btnGotovo.setBounds(10, 70, 84, 23);
 		}
 		return btnGotovo;
@@ -89,5 +108,34 @@ public class TroskoviPrevoz extends JFrame {
 			btnOdustani.setBounds(93, 70, 113, 23);
 		}
 		return btnOdustani;
+	}
+	private JLabel getLabel() {
+		if (label == null) {
+			label = new JLabel("");
+		}
+		return label;
+	}
+	private JLabel getLabel_1() {
+		if (label_1 == null) {
+			label_1 = new JLabel("");
+		}
+		return label_1;
+	}
+	private JLabel getLblNaziv() {
+		if (lblNaziv == null) {
+			lblNaziv = new JLabel("Naziv");
+		}
+		return lblNaziv;
+	}
+	private JTextField getTextField_1_1() {
+		if (textFieldNazivSpIRekr == null) {
+			textFieldNazivSpIRekr = new JTextField();
+			textFieldNazivSpIRekr.setColumns(10);
+		}
+		return textFieldNazivSpIRekr;
+	}
+	
+	public void napraviObjekat(){
+		UtilsTroskovi.napraviObjekatSportIRekr(textFieldNazivSpIRekr, textFieldIznosSpIRekr);
 	}
 }
