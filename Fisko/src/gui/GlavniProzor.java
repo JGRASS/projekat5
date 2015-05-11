@@ -154,6 +154,13 @@ public class GlavniProzor extends JFrame {
 	private JButton getBtnStatistika() {
 		if (btnStatistika == null) {
 			btnStatistika = new JButton("Statistika");
+			btnStatistika.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					Statistika stat = new Statistika();
+					stat.setLocationRelativeTo(contentPane);
+					stat.setVisible(true);
+				}
+			});
 		}
 		return btnStatistika;
 	}

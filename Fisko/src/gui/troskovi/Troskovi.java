@@ -104,11 +104,6 @@ public class Troskovi extends JFrame {
 	private JButton btnGotovo;
 	
 	/**
-	 * privatno dugme za odustajanje od akcije
-	 */
-	private JButton btnOdustani;
-	
-	/**
 	 * privatni panel
 	 */
 	private JPanel panel;
@@ -164,7 +159,6 @@ public class Troskovi extends JFrame {
 		contentPane.add(getBtnIzlasci());
 		contentPane.add(getBtnLuksuz());
 		contentPane.add(getBtnGotovo());
-		contentPane.add(getBtnOdustani());
 	}
 
 	/**
@@ -414,27 +408,15 @@ public class Troskovi extends JFrame {
 	private JButton getBtnGotovo() {
 		if (btnGotovo == null) {
 			btnGotovo = new JButton("Gotovo");
-			btnGotovo.setEnabled(false);
-			btnGotovo.setBackground(SystemColor.activeCaption);
-		}
-		return btnGotovo;
-	}
-	/**
-	 * Metoda vraca vrednost atributa BtnOdustani
-	 * @return vrednost atributa BtnOdustani kao JButton
-	 */
-	private JButton getBtnOdustani() {
-		if (btnOdustani == null) {
-			btnOdustani = new JButton("Odustani");
-			btnOdustani.setEnabled(false);
-			btnOdustani.addActionListener(new ActionListener() {
+			btnGotovo.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					dispose();
 				}
 			});
-			btnOdustani.setBackground(SystemColor.activeCaption);
+			btnGotovo.setEnabled(false);
+			btnGotovo.setBackground(SystemColor.activeCaption);
 		}
-		return btnOdustani;
+		return btnGotovo;
 	}
 	
 	/**
@@ -467,7 +449,6 @@ public class Troskovi extends JFrame {
 					btnLuksuz.setEnabled(true);
 					btnMesecniRacuni.setEnabled(true);
 					btnOdecaIObuca.setEnabled(true);
-					btnOdustani.setEnabled(true);
 					btnPotvrdi.setEnabled(true);
 					btnPrevoz.setEnabled(true);
 					btnSportIRekreacija.setEnabled(true);

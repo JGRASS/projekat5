@@ -182,6 +182,7 @@ import java.awt.event.ActionEvent;
 			double iznos = Double.parseDouble(textFieldznosBudzet.getText());
 			Budzet b = new Budzet();
 			b.setIznos(iznos);
+			b.setPeriod(comboBox.getSelectedItem().toString());
 			UtilsBudzet.postaviLimite(b);
 		}
 	}

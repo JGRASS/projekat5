@@ -4,7 +4,12 @@ import java.io.*;
 
 import budzet.Budzet;
 
-public class UtilsBudzet {
+public class UtilsBudzet implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public static void postaviLimite(Budzet budzet){
 			try {
@@ -13,7 +18,7 @@ public class UtilsBudzet {
 				obj.writeObject(budzet);
 				obj.close();
 				out.close();
-			} catch (IOException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			
