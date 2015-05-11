@@ -91,6 +91,7 @@ public class TroskoviPrevoz extends JFrame {
 			btnGotovo.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					napraviObjekat();
+					dispose();
 				}
 			});
 			btnGotovo.setBounds(10, 70, 84, 23);

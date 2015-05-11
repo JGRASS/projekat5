@@ -7,6 +7,7 @@ public abstract class Troskovi {
 	private String naziv;
 	private GregorianCalendar datum;
 	private double iznos;
+	private String vrsta;
 	
 	public String getNaziv() {
 		return naziv;

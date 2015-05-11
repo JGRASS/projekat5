@@ -87,6 +87,7 @@ public class TroskoviHrana extends JFrame {
 			btnGotovo.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					napraviObjekat();
+					dispose();
 				}
 			});
 		}

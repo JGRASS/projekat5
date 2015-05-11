@@ -2,83 +2,100 @@ package sistem.utils;
 
 import gui.troskovi.Troskovi;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.GregorianCalendar;
 
+import javax.swing.JFrame;
 import javax.swing.JTextField;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 
 import troskovi.*;
 
 public class UtilsTroskovi {
 
 	public static void napraviObjekatBOS(JTextField textFieldNazivBrigaOSebi, JTextField textFieldIznosBrigaOSebi) {
-		BrigaOSebi bos = new BrigaOSebi();
-		bos.setNaziv(textFieldNazivBrigaOSebi.getText());
-		bos.setIznos(Double.parseDouble(textFieldIznosBrigaOSebi.getText()));
-		bos.setDatum(Troskovi.date);
-		JSONTroskovi.konvertujTroskove(bos, "data/bos.data");
+		double iznos = Double.parseDouble(textFieldIznosBrigaOSebi.getText());
+		GregorianCalendar datum = Troskovi.date;
+		konvertujTroskove(datum, iznos, "data/bos.data");
 		
 	}
 
 	public static void napraviObjekatEdu(JTextField textFieldNazivEdu, JTextField textFieldIznosEdu) {
-		Edukacija edu = new Edukacija();
-		edu.setNaziv(textFieldNazivEdu.getText());
-		edu.setIznos(Double.parseDouble(textFieldIznosEdu.getText()));
-		edu.setDatum(Troskovi.date);
-		JSONTroskovi.konvertujTroskove(edu, "data/edu.data");
+		double iznos = Double.parseDouble(textFieldIznosEdu.getText());
+		GregorianCalendar datum = Troskovi.date;
+		konvertujTroskove(datum, iznos, "data/edu.data");
 	}
 
 	public static void napraviObjekatHr(JTextField textFieldHranaNaziv, JTextField textFieldHranaIznos) {
-		HranaIPice hip = new HranaIPice();
-		hip.setNaziv(textFieldHranaNaziv.getText());
-		hip.setIznos(Double.parseDouble(textFieldHranaIznos.getText()));
-		hip.setDatum(Troskovi.date);
-		JSONTroskovi.konvertujTroskove(hip, "data/hip.data");
+		double iznos = Double.parseDouble(textFieldHranaIznos.getText());
+		GregorianCalendar datum = Troskovi.date;
+		konvertujTroskove(datum, iznos, "data/hip.data");
 		
 	}
 
 	public static void napraviObjekatMesRacuni(JTextField textFieldNazivMesRacuni, JTextField textFieldIznosMesRacuni) {
-		MesecniRacuni mr = new MesecniRacuni();
-		mr.setNaziv(textFieldNazivMesRacuni.getText());
-		mr.setIznos(Double.parseDouble(textFieldIznosMesRacuni.getText()));
-		mr.setDatum(Troskovi.date);
-		JSONTroskovi.konvertujTroskove(mr, "data/mr.data");
+		double iznos = Double.parseDouble(textFieldIznosMesRacuni.getText());
+		GregorianCalendar datum = Troskovi.date;
+		konvertujTroskove(datum, iznos, "data/mr.data");
 		
 	}
 
 	public static void napraviObjekatOdIObuca(JTextField textFieldNazivOdIObuca, JTextField textFieldIznosOdIObuca) {
-		OdecaIObuca oio = new OdecaIObuca();
-		oio.setNaziv(textFieldNazivOdIObuca.getText());
-		oio.setIznos(Double.parseDouble(textFieldIznosOdIObuca.getText()));
-		oio.setDatum(Troskovi.date);
-		JSONTroskovi.konvertujTroskove(oio, "data/oio.data");
+		double iznos = Double.parseDouble(textFieldIznosOdIObuca.getText());
+		GregorianCalendar datum = Troskovi.date;
+		konvertujTroskove(datum, iznos, "data/oio.data");
 		
 	}
 
 	public static void napraviObjekatPrevoz(JTextField textFieldNazivPrevoz, JTextField textFieldIznosPrevoz) {
-		Prevoz pr = new Prevoz();
-		pr.setNaziv(textFieldNazivPrevoz.getText());
-		pr.setIznos(Double.parseDouble(textFieldIznosPrevoz.getText()));
-		pr.setDatum(Troskovi.date);
-		JSONTroskovi.konvertujTroskove(pr, "data/pr.data");
+		double iznos = Double.parseDouble(textFieldIznosPrevoz.getText());
+		GregorianCalendar datum = Troskovi.date;
+		konvertujTroskove(datum, iznos, "data/pr.data");
 		
 	}
 
 	public static void napraviObjekatSportIRekr(JTextField textFieldNazivSpIRekr, JTextField textFieldIznosSpIRekr) {
-		SportIRekreacija sir = new SportIRekreacija();
-		sir.setNaziv(textFieldNazivSpIRekr.getText());
-		sir.setIznos(Double.parseDouble(textFieldIznosSpIRekr.getText()));
-		sir.setDatum(Troskovi.date);
-		JSONTroskovi.konvertujTroskove(sir, "data/sir.data");
+		double iznos = Double.parseDouble(textFieldIznosSpIRekr.getText());
+		GregorianCalendar datum = Troskovi.date;
+		konvertujTroskove(datum, iznos, "data/sir.data");
 	}
 
 	public static void napraviObjekatStanovanje(JTextField textFieldNazivStanovanje, JTextField textFieldIznosStanovanje) {
-		TroskoviStanovanja ts = new TroskoviStanovanja();
-		ts.setNaziv(textFieldNazivStanovanje.getText());
-		ts.setIznos(Double.parseDouble(textFieldIznosStanovanje.getText()));
-		ts.setDatum(Troskovi.date);
-		JSONTroskovi.konvertujTroskove(ts, "data/ts.data");
+		double iznos = Double.parseDouble(textFieldIznosStanovanje.getText());
+		GregorianCalendar datum = Troskovi.date;
+		konvertujTroskove(datum, iznos, "data/ts.data");
 	}
 
 	
-
+	public static void konvertujTroskove(GregorianCalendar datum, double trosak, String path){
+		double iznos2 = 0;
+		FileReader in;
+		try {
+			in = new FileReader("data/limiti.data");
+			iznos2 = in.read();
+			if((iznos2-trosak)>=0){ iznos2 = iznos2-trosak;
+			try {
+				PrintWriter out = new PrintWriter(path);
+				out.println(trosak+":"+datum.get(GregorianCalendar.DAY_OF_MONTH)+"."+
+						datum.get(GregorianCalendar.MONTH+1)+"."+
+						datum.get(GregorianCalendar.YEAR)+".");
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}}
+			else throw new RuntimeException();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		UtilsBudzet.postaviLimite(iznos2);
+	}
 }

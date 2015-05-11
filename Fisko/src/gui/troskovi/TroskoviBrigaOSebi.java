@@ -15,6 +15,8 @@ import sistem.utils.UtilsTroskovi;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
 public class TroskoviBrigaOSebi extends JFrame {
 
@@ -90,6 +92,7 @@ public class TroskoviBrigaOSebi extends JFrame {
 			btnGotovo.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					napraviObjekat();
+					dispose();
 				}
 			});
 			btnGotovo.setBounds(10, 70, 84, 23);
@@ -136,5 +139,5 @@ public class TroskoviBrigaOSebi extends JFrame {
 	
 	public void napraviObjekat(){
 		UtilsTroskovi.napraviObjekatBOS(textFieldNazivBrigaOSebi, textFieldIznosBrigaOSebi);
-	}
+	}	
 }
