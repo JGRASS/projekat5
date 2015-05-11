@@ -2,7 +2,7 @@ package sistem.utils;
 
 import gui.troskovi.Troskovi;
 
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,12 +11,6 @@ import java.util.GregorianCalendar;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-
-import troskovi.*;
 
 public class UtilsTroskovi {
 
@@ -76,10 +70,10 @@ public class UtilsTroskovi {
 	
 	public static void konvertujTroskove(GregorianCalendar datum, double trosak, String path){
 		double iznos2 = 0;
-		FileReader in;
+		BufferedReader in;
 		try {
-			in = new FileReader("data/limiti.data");
-			iznos2 = in.read();
+			in = new BufferedReader(new FileReader("data/limiti.data"));
+			iznos2 = Double.parseDouble(in.readLine());
 			double ukupno = iznos2 - trosak;
 			if(ukupno>=0){ iznos2 = iznos2-trosak;
 			try {
@@ -91,7 +85,7 @@ public class UtilsTroskovi {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}}
-			else throw new RuntimeException();
+			else new JFrame();
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
