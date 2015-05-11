@@ -15,7 +15,13 @@ import javax.swing.border.EmptyBorder;
 import sistem.utils.UtilsTroskovi;
 
 import java.awt.GridLayout;
+/**
+ * Graficka klasa za unos troska iz kategorije Stanovanje
 
+ * 
+ * @author Ana
+ *
+ */
 public class TroskoviStanovanja extends JFrame {
 
 	/**
@@ -28,10 +34,10 @@ public class TroskoviStanovanja extends JFrame {
 	private JButton btnGotovo;
 	private JButton btnOdustani;
 	private JLabel label;
-	private JPanel panel;
+	private JLabel label_1;
 
 	/**
-	 * Launch the application.
+	 * Startovanje apliacije
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -47,7 +53,7 @@ public class TroskoviStanovanja extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Kreiranje prozora
 	 */
 	public TroskoviStanovanja() {
 		setTitle("Stanovanje");
@@ -61,11 +67,15 @@ public class TroskoviStanovanja extends JFrame {
 		contentPane.setLayout(new GridLayout(0, 2, 12, 0));
 		contentPane.add(getLblIznos());
 		contentPane.add(getTextField_1());
-		contentPane.add(getPanel());
+		contentPane.add(getLabel_1());
 		contentPane.add(getLabel());
 		contentPane.add(getBtnGotovo());
 		contentPane.add(getBtnOdustani());}
 
+	/**
+	 * Metoda vraca vrednost atributa LblIznos
+	 * @return vrednost atributa LblIznos kao JLabel
+	 */
 	private JLabel getLblIznos() {
 		if (lblIznos == null) {
 			lblIznos = new JLabel("Iznos");
@@ -73,6 +83,10 @@ public class TroskoviStanovanja extends JFrame {
 		}
 		return lblIznos;
 	}
+	/**
+	 * Metoda vraca vrednost atributa TextField_1
+	 * @return vrednost atributa TextField_1 kao JTextField
+	 */
 	private JTextField getTextField_1() {
 		if (textFieldIznosStanovanje == null) {
 			textFieldIznosStanovanje = new JTextField();
@@ -81,6 +95,10 @@ public class TroskoviStanovanja extends JFrame {
 		}
 		return textFieldIznosStanovanje;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnGotovo
+	 * @return vrednost atributa BtnGotovo kao JButton
+	 */
 	private JButton getBtnGotovo() {
 		if (btnGotovo == null) {
 			btnGotovo = new JButton("Gotovo");
@@ -94,6 +112,10 @@ public class TroskoviStanovanja extends JFrame {
 		}
 		return btnGotovo;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnOdustani
+	 * @return vrednost atributa BtnOdustani kao JButton
+	 */
 	private JButton getBtnOdustani() {
 		if (btnOdustani == null) {
 			btnOdustani = new JButton("Odustani");
@@ -106,19 +128,31 @@ public class TroskoviStanovanja extends JFrame {
 		}
 		return btnOdustani;
 	}
+
+	/**
+	 * Metoda vraca vrednost atributa Label
+	 * @return vrednost atributa Label kao JLabel
+	 */
 	private JLabel getLabel() {
 		if (label == null) {
 			label = new JLabel("");
 		}
 		return label;
 	}
-	private JPanel getPanel() {
-		if (panel == null) {
-			panel = new JPanel();
+	/**
+	 * Metoda vraca vrednost atributa Label_1
+	 * @return vrednost atributa Label_1 kao JLabel
+	 */
+	private JLabel getLabel_1() {
+		if (label_1 == null) {
+			label_1 = new JLabel("");
 		}
-		return panel;
+		return label_1;
 	}
-	
+	/**
+	 * Metoda koja vrednost atributa textFieldIznosMesRacuni prosledjuje kao ulazni parametar
+	 * metodi napraviObjekatMesRacuni klase UtilsTroskovi
+	 */
 	public void napraviObjekat(){
 		UtilsTroskovi.napraviObjekatStanovanje(textFieldIznosStanovanje);
 	}

@@ -17,7 +17,12 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+/**
+ * Graficka klasa koja predstavlja glavni prozor aplikacije
+ * 
+ * @author Ana
+ *
+ */
 public class GlavniProzor extends JFrame {
 
 	/**
@@ -39,6 +44,10 @@ public class GlavniProzor extends JFrame {
 	private JMenu mnPomo;
 	private JLabel lblCopyrightByAna;
 
+	/**
+	 * Kreiranje prozora
+	 */
+
 	public GlavniProzor() {
 		setResizable(false);
 		setTitle("Fisko");
@@ -52,6 +61,10 @@ public class GlavniProzor extends JFrame {
 		contentPane.add(getLblFiskoVa(), BorderLayout.NORTH);
 		contentPane.add(getPanel(), BorderLayout.CENTER);
 	}
+	/**
+	 * Metoda vraca vrednost atributa LblFiskoVa
+	 * @return vrednost atributa LblFiskoVa kao JLabel
+	 */
 	private JLabel getLblFiskoVa() {
 		if (lblFiskoVa == null) {
 			lblFiskoVa = new JLabel("Va\u0161 finansijski planer");
@@ -59,6 +72,10 @@ public class GlavniProzor extends JFrame {
 		}
 		return lblFiskoVa;
 	}
+	/**
+	 * Metoda vraca vrednost atributa Panel
+	 * @return vrednost atributa Panel kao JPanel
+	 */
 	private JPanel getPanel() {
 		if (panel == null) {
 			panel = new JPanel();
@@ -70,6 +87,10 @@ public class GlavniProzor extends JFrame {
 		return panel;
 	}
 	
+	/**
+	 * Metoda vraca vrednost atributa BtnBudget
+	 * @return vrednost atributa BtnBudget kao JButton
+	 */
 	private JButton getBtnBudget() {
 		if (btnBudget == null) {
 			btnBudget = new JButton("Bud\u017Eet");
@@ -81,6 +102,10 @@ public class GlavniProzor extends JFrame {
 		}
 		return btnBudget;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnTroskovi
+	 * @return vrednost atributa BtnTroskovi kao JButton
+	 */
 	private JButton getBtnTroskovi() {
 		if (btnTroskovi == null) {
 			btnTroskovi = new JButton("Tro\u0161kovi");
@@ -92,12 +117,20 @@ public class GlavniProzor extends JFrame {
 		}
 		return btnTroskovi;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnStatistika
+	 * @return vrednost atributa BtnStatistika kao JButton
+	 */
 	private JButton getBtnStatistika() {
 		if (btnStatistika == null) {
 			btnStatistika = new JButton("Statistika");
 		}
 		return btnStatistika;
 	}
+	/**
+	 * Metoda vraca vrednost atributa MnPomo
+	 * @return vrednost atributa MnPomo kao JMenu
+	 */
 	private JMenu getMnPomo() {
 		if (mnPomo == null) {
 			mnPomo = new JMenu("Pomo\u0107");
@@ -105,11 +138,17 @@ public class GlavniProzor extends JFrame {
 		return mnPomo;
 	}
 	
+	/**
+	 * Metoda koja omogucava vidljivost prozora Budzet
+	 */
 	private void prikaziBudzetProzor() {
 		Budzet prozor = new Budzet ();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 }
+	/**
+	 * Metoda koja omogucava vidljivost prozora Troskovi
+	 */
 	private void prikaziTroskoviProzor() {
 		Troskovi prozor = new Troskovi ();
 		prozor.setLocationRelativeTo(contentPane);

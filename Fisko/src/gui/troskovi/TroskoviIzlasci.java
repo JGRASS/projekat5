@@ -31,7 +31,7 @@ public class TroskoviIzlasci extends JFrame {
 	private JTextField textFieldIznosIzlasci;
 
 	/**
-	 * Launch the application.
+	 * Startovanje apliacije
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -47,7 +47,7 @@ public class TroskoviIzlasci extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Kreiranje prozora
 	 */
 	public TroskoviIzlasci() {
 		setTitle("Izlasci");
@@ -60,12 +60,16 @@ public class TroskoviIzlasci extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.setLayout(new GridLayout(0, 2, 12, 0));
 		contentPane.add(getLblIznos());
-		contentPane.add(getTextField_1_1());
+		contentPane.add(getTextField_1());
 		contentPane.add(getLabel());
 		contentPane.add(getLabel_1());
 		contentPane.add(getBtnGotovo());
 		contentPane.add(getBtnOdustani());}
 
+	/**
+	 * Metoda vraca vrednost atributa LblIznos
+	 * @return vrednost atributa LblIznos kao JLabel
+	 */
 	private JLabel getLblIznos() {
 		if (lblIznos == null) {
 			lblIznos = new JLabel("Iznos");
@@ -73,6 +77,22 @@ public class TroskoviIzlasci extends JFrame {
 		}
 		return lblIznos;
 	}
+	/**
+	 * Metoda vraca vrednost atributa TextField_1
+	 * @return vrednost atributa TextField_1 kao JTextField
+	 */
+	private JTextField getTextField_1() {
+		if (textFieldIznosIzlasci == null) {
+			textFieldIznosIzlasci = new JTextField();
+			textFieldIznosIzlasci.setBounds(10, 36, 196, 23);
+			textFieldIznosIzlasci.setColumns(10);
+		}
+		return textFieldIznosIzlasci;
+	}
+	/**
+	 * Metoda vraca vrednost atributa BtnGotovo
+	 * @return vrednost atributa BtnGotovo kao JButton
+	 */
 	private JButton getBtnGotovo() {
 		if (btnGotovo == null) {
 			btnGotovo = new JButton("Gotovo");
@@ -86,6 +106,10 @@ public class TroskoviIzlasci extends JFrame {
 		}
 		return btnGotovo;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnOdustani
+	 * @return vrednost atributa BtnOdustani kao JButton
+	 */
 	private JButton getBtnOdustani() {
 		if (btnOdustani == null) {
 			btnOdustani = new JButton("Odustani");
@@ -98,26 +122,31 @@ public class TroskoviIzlasci extends JFrame {
 		}
 		return btnOdustani;
 	}
+
+	/**
+	 * Metoda vraca vrednost atributa Label
+	 * @return vrednost atributa Label kao JLabel
+	 */
 	private JLabel getLabel() {
 		if (label == null) {
 			label = new JLabel("");
 		}
 		return label;
 	}
+	/**
+	 * Metoda vraca vrednost atributa Label_1
+	 * @return vrednost atributa Label_1 kao JLabel
+	 */
 	private JLabel getLabel_1() {
 		if (label_1 == null) {
 			label_1 = new JLabel("");
 		}
 		return label_1;
 	}
-	private JTextField getTextField_1_1() {
-		if (textFieldIznosIzlasci == null) {
-			textFieldIznosIzlasci = new JTextField();
-			textFieldIznosIzlasci.setColumns(10);
-		}
-		return textFieldIznosIzlasci;
-	}
-	
+	/**
+	 * Metoda koja vrednost atributa textFieldIznosIzlasci prosledjuje kao ulazni parametar
+	 * metodi napraviObjekatHr klase UtilsTroskovi
+	 */
 	public void napraviObjekat(){
 		UtilsTroskovi.napraviObjekatHr(textFieldIznosIzlasci);
 	}

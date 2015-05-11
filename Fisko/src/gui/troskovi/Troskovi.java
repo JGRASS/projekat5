@@ -33,6 +33,12 @@ import java.util.GregorianCalendar;
 
 import javax.swing.JTextField;
 
+/**
+ * Graficka klasa koja omogucava izbor kategorije troskova za koju zelimo uneti trosak
+ * 
+ * @author Ana
+ *
+ */
 public class Troskovi extends JFrame {
 
 	/**
@@ -57,7 +63,7 @@ public class Troskovi extends JFrame {
 	public static GregorianCalendar date;
 
 	/**
-	 * Launch the application.
+	 * Startovanje apliacije
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -73,7 +79,7 @@ public class Troskovi extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Kreiranje prozora
 	 */
 	public Troskovi() {
 		setTitle("Troškovi");
@@ -99,6 +105,10 @@ public class Troskovi extends JFrame {
 		contentPane.add(getBtnOdustani());
 	}
 
+	/**
+	 * Metoda vraca vrednost atributa BtnHranaIPice
+	 * @return vrednost atributa BtnHranaIPice kao JButton
+	 */
 	private JButton getBtnHranaIPice() {
 		if (btnHranaIPice == null) {
 			btnHranaIPice = new JButton("Hrana i pi\u0107e");
@@ -111,6 +121,10 @@ public class Troskovi extends JFrame {
 		}
 		return btnHranaIPice;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnOdecaIObuca
+	 * @return vrednost atributa BtnOdecaIObuca kao JButton
+	 */
 	private JButton getBtnOdecaIObuca() {
 		if (btnOdecaIObuca == null) {
 			btnOdecaIObuca = new JButton("Ode\u0107a i obu\u0107a");
@@ -123,6 +137,10 @@ public class Troskovi extends JFrame {
 		}
 		return btnOdecaIObuca;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnBrigaOSebi
+	 * @return vrednost atributa BtnBrigaOSebi kao JButton
+	 */
 	private JButton getBtnBrigaOSebi() {
 		if (btnBrigaOSebi == null) {
 			btnBrigaOSebi = new JButton("Briga o sebi");
@@ -135,6 +153,10 @@ public class Troskovi extends JFrame {
 		}
 		return btnBrigaOSebi;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnTroskoviStanovanja
+	 * @return vrednost atributa BtnTroskoviStanovanja kao JButton
+	 */
 	private JButton getBtnTroskoviStanovanja() {
 		if (btnTroskoviStanovanja == null) {
 			btnTroskoviStanovanja = new JButton("Tro\u0161kovi \r\nstanovanja");
@@ -147,6 +169,10 @@ public class Troskovi extends JFrame {
 		}
 		return btnTroskoviStanovanja;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnMesecniRacuni
+	 * @return vrednost atributa BtnMesecniRacuni kao JButton
+	 */
 	private JButton getBtnMesecniRacuni() {
 		if (btnMesecniRacuni == null) {
 			btnMesecniRacuni = new JButton("Mese\u010Dni ra\u010Duni");
@@ -159,6 +185,10 @@ public class Troskovi extends JFrame {
 		}
 		return btnMesecniRacuni;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnSportIRekreacija
+	 * @return vrednost atributa BtnSportIRekreacija kao JButton
+	 */
 	private JButton getBtnSportIRekreacija() {
 		if (btnSportIRekreacija == null) {
 			btnSportIRekreacija = new JButton("Sport i rekreacija");
@@ -171,6 +201,10 @@ public class Troskovi extends JFrame {
 		}
 		return btnSportIRekreacija;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnPrevoz
+	 * @return vrednost atributa BtnPrevoz kao JButton
+	 */
 	private JButton getBtnPrevoz() {
 		if (btnPrevoz == null) {
 			btnPrevoz = new JButton("Prevoz");
@@ -183,6 +217,10 @@ public class Troskovi extends JFrame {
 		}
 		return btnPrevoz;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnEdukacija
+	 * @return vrednost atributa BtnEdukacija kao JButton
+	 */
 	private JButton getBtnEdukacija() {
 		if (btnEdukacija == null) {
 			btnEdukacija = new JButton("Edukacija");
@@ -195,6 +233,10 @@ public class Troskovi extends JFrame {
 		}
 		return btnEdukacija;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnIzlasci
+	 * @return vrednost atributa BtnIzlasci kao JButton
+	 */
 	private JButton getBtnIzlasci() {
 		if (btnIzlasci == null) {
 			btnIzlasci = new JButton("Izlasci");
@@ -207,6 +249,10 @@ public class Troskovi extends JFrame {
 		}
 		return btnIzlasci;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnLuksuz
+	 * @return vrednost atributa BtnLuksuz kao JButton
+	 */
 	private JButton getBtnLuksuz() {
 		if (btnLuksuz == null) {
 			btnLuksuz = new JButton("Luksuz");
@@ -219,58 +265,90 @@ public class Troskovi extends JFrame {
 		}
 		return btnLuksuz;
 	}
-	
+	/**
+	 * Metoda koja omogucava vidljivost prozora TroskoviHrana
+	 */
 	private void prikaziTroskoviHranaProzor() {
 		TroskoviHrana prozor = new TroskoviHrana ();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}
-	
+	/**
+	 * Metoda koja omogucava vidljivost prozora TroskoviBrigaOSebi
+	 */
 	private void prikaziTroskoviBrigaOSebi() {
 		TroskoviBrigaOSebi prozor = new TroskoviBrigaOSebi ();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}
+	/**
+	 * Metoda koja omogucava vidljivost prozora TroskoviStanovanja
+	 */
 	private void prikaziTroskoviStanovanja() {
 		TroskoviStanovanja prozor = new TroskoviStanovanja ();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}
+	/**
+	 * Metoda koja omogucava vidljivost prozora TroskoviOdecaiObuca
+	 */
 	private void prikaziTroskoviOdecaiObucaProzor() {
 		TroskoviOdecaiObuca prozor = new TroskoviOdecaiObuca ();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}
+	/**
+	 * Metoda koja omogucava vidljivost prozora TroskoviMesecniRacuni
+	 */
 	private void prikaziTroskoviMesecniRacuni() {
 		TroskoviMesecniRacuni prozor = new TroskoviMesecniRacuni ();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}
+	/**
+	 * Metoda koja omogucava vidljivost prozora TroskoviSportIRekreacija
+	 */
 	private void prikaziTroskoviSportIRekreacija() {
 		TroskoviSportIRekreacija prozor = new TroskoviSportIRekreacija ();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}
+	/**
+	 * Metoda koja omogucava vidljivost prozora TroskoviPrevoz
+	 */
 	private void prikaziTroskoviPrevoz() {
 		TroskoviPrevoz prozor = new TroskoviPrevoz ();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}
+	/**
+	 * Metoda koja omogucava vidljivost prozora TroskoviEdukacija
+	 */
 	private void prikaziTroskoviEdukacija() {
 		TroskoviEdukacija prozor = new TroskoviEdukacija ();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}
+	/**
+	 * Metoda koja omogucava vidljivost prozora TroskoviIzlasci
+	 */
 	private void prikaziTroskoviIzlasci() {
 		TroskoviIzlasci prozor = new TroskoviIzlasci ();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}
+	/**
+	 * Metoda koja omogucava vidljivost prozora TroskoviLuksuz
+	 */
 	private void prikaziTroskoviLuksuz() {
 		TroskoviLuksuz prozor = new TroskoviLuksuz ();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnGotovo
+	 * @return vrednost atributa BtnGotovo kao JButton
+	 */
 	private JButton getBtnGotovo() {
 		if (btnGotovo == null) {
 			btnGotovo = new JButton("Gotovo");
@@ -279,6 +357,10 @@ public class Troskovi extends JFrame {
 		}
 		return btnGotovo;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnOdustani
+	 * @return vrednost atributa BtnOdustani kao JButton
+	 */
 	private JButton getBtnOdustani() {
 		if (btnOdustani == null) {
 			btnOdustani = new JButton("Odustani");
@@ -293,6 +375,10 @@ public class Troskovi extends JFrame {
 		return btnOdustani;
 	}
 	
+	/**
+	 * Metoda vraca vrednost atributa Panel
+	 * @return vrednost atributa Panel kao JPanel
+	 */
 	private JPanel getPanel() {
 		if (panel == null) {
 			panel = new JPanel();
@@ -301,6 +387,10 @@ public class Troskovi extends JFrame {
 		}
 		return panel;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnPotvrdi
+	 * @return vrednost atributa BtnPotvrdi kao JButton
+	 */
 	private JButton getBtnPotvrdi() {
 		if (btnPotvrdi == null) {
 			btnPotvrdi = new JButton("Postavi datum");

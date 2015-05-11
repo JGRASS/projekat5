@@ -1,6 +1,5 @@
 package gui.troskovi;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +14,12 @@ import javax.swing.border.EmptyBorder;
 import sistem.utils.UtilsTroskovi;
 
 import java.awt.GridLayout;
-
+/**
+ * Graficka klasa za unos troska iz kategorije Prevoz
+ * 
+ * @author Ana
+ *
+ */
 public class TroskoviPrevoz extends JFrame {
 
 	/**
@@ -31,7 +35,7 @@ public class TroskoviPrevoz extends JFrame {
 	private JLabel label_1;
 
 	/**
-	 * Launch the application.
+	 * Startovanje apliacije
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -47,7 +51,7 @@ public class TroskoviPrevoz extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Kreiranje prozora
 	 */
 	public TroskoviPrevoz() {
 		setTitle("Prevoz");
@@ -66,6 +70,10 @@ public class TroskoviPrevoz extends JFrame {
 		contentPane.add(getBtnGotovo());
 		contentPane.add(getBtnOdustani());}
 
+	/**
+	 * Metoda vraca vrednost atributa LblIznos
+	 * @return vrednost atributa LblIznos kao JLabel
+	 */
 	private JLabel getLblIznos() {
 		if (lblIznos == null) {
 			lblIznos = new JLabel("Iznos");
@@ -73,6 +81,10 @@ public class TroskoviPrevoz extends JFrame {
 		}
 		return lblIznos;
 	}
+	/**
+	 * Metoda vraca vrednost atributa TextField_1
+	 * @return vrednost atributa TextField_1 kao JTextField
+	 */
 	private JTextField getTextField_1() {
 		if (textFieldIznosPrevoz == null) {
 			textFieldIznosPrevoz = new JTextField();
@@ -81,6 +93,10 @@ public class TroskoviPrevoz extends JFrame {
 		}
 		return textFieldIznosPrevoz;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnGotovo
+	 * @return vrednost atributa BtnGotovo kao JButton
+	 */
 	private JButton getBtnGotovo() {
 		if (btnGotovo == null) {
 			btnGotovo = new JButton("Gotovo");
@@ -94,6 +110,10 @@ public class TroskoviPrevoz extends JFrame {
 		}
 		return btnGotovo;
 	}
+	/**
+	 * Metoda vraca vrednost atributa BtnOdustani
+	 * @return vrednost atributa BtnOdustani kao JButton
+	 */
 	private JButton getBtnOdustani() {
 		if (btnOdustani == null) {
 			btnOdustani = new JButton("Odustani");
@@ -106,19 +126,31 @@ public class TroskoviPrevoz extends JFrame {
 		}
 		return btnOdustani;
 	}
+
+	/**
+	 * Metoda vraca vrednost atributa Label
+	 * @return vrednost atributa Label kao JLabel
+	 */
 	private JLabel getLabel() {
 		if (label == null) {
 			label = new JLabel("");
 		}
 		return label;
 	}
+	/**
+	 * Metoda vraca vrednost atributa Label_1
+	 * @return vrednost atributa Label_1 kao JLabel
+	 */
 	private JLabel getLabel_1() {
 		if (label_1 == null) {
 			label_1 = new JLabel("");
 		}
 		return label_1;
 	}
-	
+	/**
+	 * Metoda koja vrednost atributa textFieldIznosMesRacuni prosledjuje kao ulazni parametar
+	 * metodi napraviObjekatMesRacuni klase UtilsTroskovi
+	 */
 	public void napraviObjekat(){
 		UtilsTroskovi.napraviObjekatPrevoz(textFieldIznosPrevoz);
 	}

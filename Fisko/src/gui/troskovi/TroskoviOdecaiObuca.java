@@ -1,6 +1,5 @@
 package gui.troskovi;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +14,12 @@ import javax.swing.border.EmptyBorder;
 import sistem.utils.UtilsTroskovi;
 
 import java.awt.GridLayout;
-
+/**
+ * Graficka klasa za unos troska iz kategorije Odeca i obuca
+ * 
+ * @author Ana
+ *
+ */
 public class TroskoviOdecaiObuca extends JFrame {
 
 	/**
@@ -32,7 +36,7 @@ public class TroskoviOdecaiObuca extends JFrame {
 
 
 	/**
-	 * Launch the application.
+	 * Startovanje apliacije
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -48,7 +52,7 @@ public class TroskoviOdecaiObuca extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Kreiranje prozora
 	 */
 	public TroskoviOdecaiObuca() {
 		setTitle("Odeća i obuća");
@@ -67,59 +71,87 @@ public class TroskoviOdecaiObuca extends JFrame {
 		contentPane.add(getBtnGotovo());
 		contentPane.add(getBtnOdustani());
 	}
-		private JLabel getLblIznos() {
-			if (lblIznos == null) {
-				lblIznos = new JLabel("Iznos");
-				lblIznos.setBounds(10, 11, 55, 14);
-			}
-			return lblIznos;
+	/**
+	 * Metoda vraca vrednost atributa LblIznos
+	 * @return vrednost atributa LblIznos kao JLabel
+	 */
+	private JLabel getLblIznos() {
+		if (lblIznos == null) {
+			lblIznos = new JLabel("Iznos");
+			lblIznos.setBounds(10, 11, 55, 14);
 		}
-		private JTextField getTextField_1() {
-			if (textFieldIznosOdIObuca == null) {
-				textFieldIznosOdIObuca = new JTextField();
-				textFieldIznosOdIObuca.setBounds(10, 36, 196, 23);
-				textFieldIznosOdIObuca.setColumns(10);
-			}
-			return textFieldIznosOdIObuca;
+		return lblIznos;
+	}
+	/**
+	 * Metoda vraca vrednost atributa TextField_1
+	 * @return vrednost atributa TextField_1 kao JTextField
+	 */
+	private JTextField getTextField_1() {
+		if (textFieldIznosOdIObuca == null) {
+			textFieldIznosOdIObuca = new JTextField();
+			textFieldIznosOdIObuca.setBounds(10, 36, 196, 23);
+			textFieldIznosOdIObuca.setColumns(10);
 		}
-		private JButton getBtnGotovo() {
-			if (btnGotovo == null) {
-				btnGotovo = new JButton("Gotovo");
-				btnGotovo.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						napraviObjekat();
-						dispose();
-					}
-				});
-				btnGotovo.setBounds(10, 70, 84, 23);
-			}
-			return btnGotovo;
+		return textFieldIznosOdIObuca;
+	}
+	/**
+	 * Metoda vraca vrednost atributa BtnGotovo
+	 * @return vrednost atributa BtnGotovo kao JButton
+	 */
+	private JButton getBtnGotovo() {
+		if (btnGotovo == null) {
+			btnGotovo = new JButton("Gotovo");
+			btnGotovo.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					napraviObjekat();
+					dispose();
+				}
+			});
+			btnGotovo.setBounds(10, 70, 84, 23);
 		}
-		private JButton getBtnOdustani() {
-			if (btnOdustani == null) {
-				btnOdustani = new JButton("Odustani");
-				btnOdustani.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent arg0) {
-						dispose();
-					}
-				});
-				btnOdustani.setBounds(93, 70, 113, 23);
-			}
-			return btnOdustani;
+		return btnGotovo;
+	}
+	/**
+	 * Metoda vraca vrednost atributa BtnOdustani
+	 * @return vrednost atributa BtnOdustani kao JButton
+	 */
+	private JButton getBtnOdustani() {
+		if (btnOdustani == null) {
+			btnOdustani = new JButton("Odustani");
+			btnOdustani.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					dispose();
+				}
+			});
+			btnOdustani.setBounds(93, 70, 113, 23);
 		}
+		return btnOdustani;
+	}
+
+	/**
+	 * Metoda vraca vrednost atributa Label
+	 * @return vrednost atributa Label kao JLabel
+	 */
 	private JLabel getLabel() {
 		if (label == null) {
 			label = new JLabel("");
 		}
 		return label;
 	}
+	/**
+	 * Metoda vraca vrednost atributa Label_1
+	 * @return vrednost atributa Label_1 kao JLabel
+	 */
 	private JLabel getLabel_1() {
 		if (label_1 == null) {
 			label_1 = new JLabel("");
 		}
 		return label_1;
 	}
-	
+	/**
+	 * Metoda koja vrednost atributa textFieldIznosMesRacuni prosledjuje kao ulazni parametar
+	 * metodi napraviObjekatMesRacuni klase UtilsTroskovi
+	 */
 	public void napraviObjekat(){
 		UtilsTroskovi.napraviObjekatOdIObuca(textFieldIznosOdIObuca);
 	}
