@@ -37,13 +37,14 @@ public class GlavniProzor extends JFrame {
 	private JButton btnTroskovi;
 	private JButton btnStatistika;
 	private JMenu mnPomo;
+	private JLabel lblCopyrightByAna;
 
 	public GlavniProzor() {
 		setResizable(false);
 		setTitle("Fisko");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 116);
-		setJMenuBar(getMenuBar_1());
+		setBounds(100, 100, 352, 109);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -64,51 +65,11 @@ public class GlavniProzor extends JFrame {
 			panel.add(getBtnBudget());
 			panel.add(getBtnTroskovi());
 			panel.add(getBtnStatistika());
+			panel.add(getLblCopyrightByAna());
 		}
 		return panel;
 	}
-	private JMenuBar getMenuBar_1() {
-		if (menuBar == null) {
-			menuBar = new JMenuBar();
-			menuBar.add(getMnPodaci());
-			menuBar.add(getMnPodeavanja());
-			menuBar.add(getMnONama());
-			menuBar.add(getMnPomo());
-		}
-		return menuBar;
-	}
-	private JMenu getMnPodeavanja() {
-		if (mnPodeavanja == null) {
-			mnPodeavanja = new JMenu("Pode\u0161avanja");
-		}
-		return mnPodeavanja;
-	}
-	private JMenu getMnONama() {
-		if (mnONama == null) {
-			mnONama = new JMenu("O nama");
-		}
-		return mnONama;
-	}
-	private JMenu getMnPodaci() {
-		if (mnPodaci == null) {
-			mnPodaci = new JMenu("Podaci");
-			mnPodaci.add(getMntmOtvoriIzvetaj());
-			mnPodaci.add(getMntmNewMenuItem());
-		}
-		return mnPodaci;
-	}
-	private JMenuItem getMntmOtvoriIzvetaj() {
-		if (mntmOtvoriIzvetaj == null) {
-			mntmOtvoriIzvetaj = new JMenuItem("Otvori izve\u0161taj");
-		}
-		return mntmOtvoriIzvetaj;
-	}
-	private JMenuItem getMntmNewMenuItem() {
-		if (mntmNewMenuItem == null) {
-			mntmNewMenuItem = new JMenuItem("Sa\u010Duvaj izve\u0161taj");
-		}
-		return mntmNewMenuItem;
-	}
+	
 	private JButton getBtnBudget() {
 		if (btnBudget == null) {
 			btnBudget = new JButton("Bud\u017Eet");
@@ -153,5 +114,11 @@ public class GlavniProzor extends JFrame {
 		Troskovi prozor = new Troskovi ();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
+	}
+	private JLabel getLblCopyrightByAna() {
+		if (lblCopyrightByAna == null) {
+			lblCopyrightByAna = new JLabel("Copyright by Ana & Putnich");
+		}
+		return lblCopyrightByAna;
 	}
 }
