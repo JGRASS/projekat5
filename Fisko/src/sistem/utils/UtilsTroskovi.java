@@ -1,33 +1,36 @@
 package sistem.utils;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-
+import java.io.*;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import budzet.Budzet;
 import troskovi.Troskovi;
 
+/**
+ * klasa pomocnih metoda za klasu Troskovi
+ * @author marcus
+ *
+ */
 public class UtilsTroskovi {
 
+	/**
+	 * metoda koja prima objekat troska i 
+	 * putanju za cuvanje troska
+	 * @param o kao objekat
+	 * @param path kao string
+	 */
 	public static void konvertujTroskove(Object o, String path){
 		Budzet budzet = null;
 		double iznos2 = 0;
 		if(o instanceof Troskovi){
-			FileInputStream in;
-			ObjectInputStream inObj;
+			BufferedReader in;
 			double trosak = ((Troskovi) o).getIznos();
 			try {
-				in = new FileInputStream("data/limiti.data");
-				inObj = new ObjectInputStream(in);
-				budzet = (Budzet) inObj.readObject();
-				iznos2 = budzet.getIznos();
+				in = new BufferedReader(new FileReader("data/limiti.data"));
+				iznos2 = Double.parseDouble(in.readLine());
 				double ukupno = iznos2 - trosak;
 				in.close();
-				inObj.close();
 				if(ukupno>=0){ 
 					iznos2 = iznos2-trosak;
 					try {
@@ -41,14 +44,32 @@ public class UtilsTroskovi {
 						e.printStackTrace();
 					}} else {
 					new JOptionPane();
-					JOptionPane.showConfirmDialog(
+					JOptionPane.showMessageDialog(
 							new JPanel(), "Prekoracili ste iznos budzeta");
 				}
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
 		}
-		
+	
 		UtilsBudzet.postaviLimite(budzet);
+	}
+	
+	/**
+	 * metoda koja ucitava troskove
+	 * @param path kaos tring putanje ka fajlu
+	 * @return ucitan iznos kao double
+	 */
+	public static double ucitajTroskove(String path){
+		BufferedReader in;
+		double iznos = 0;
+		try {
+			in = new BufferedReader(new FileReader(path));
+			iznos = in.read();
+			in.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return iznos;
 	}
 }

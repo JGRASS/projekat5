@@ -1,6 +1,7 @@
 package gui;
 
 import gui.budzet.BudzetGUI;
+import gui.statistika.Statistika;
 import gui.troskovi.Troskovi;
 
 import java.awt.BorderLayout;
@@ -11,7 +12,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
@@ -156,15 +156,21 @@ public class GlavniProzor extends JFrame {
 			btnStatistika = new JButton("Statistika");
 			btnStatistika.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					Statistika stat = new Statistika();
-					stat.setLocationRelativeTo(contentPane);
-					stat.setVisible(true);
+					prikaziStatProzor();
 				}
+
+				
 			});
 		}
 		return btnStatistika;
 	}
 	
+	private void prikaziStatProzor() {
+					// TODO Auto-generated method stub
+					Statistika stat = new Statistika();
+					stat.setLocationRelativeTo(contentPane);
+					stat.setVisible(true);
+				}
 	/**
 	 * Metoda koja omogucava vidljivost prozora Budzet
 	 */

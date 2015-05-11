@@ -7,9 +7,5 @@ package troskovi;
  *
  */
 public class Prevoz extends Troskovi{
-
-	/**
-	 * Predstavlja naziv kategorije troskova
-	 */
-	public static String vrsta = "prevoz";
+	
 }

@@ -7,9 +7,5 @@ package troskovi;
  *
  */
 public class SportIRekreacija extends Troskovi{
-
-	/**
-	 * Predstavlja naziv kategorije troskova
-	 */
-	public static String vrsta = "Sport i rekreacija";
+	
 }

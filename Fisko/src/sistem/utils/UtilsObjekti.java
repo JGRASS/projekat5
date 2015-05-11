@@ -12,8 +12,17 @@ import troskovi.Prevoz;
 import troskovi.SportIRekreacija;
 import troskovi.TroskoviStanovanja;
 
+/**
+ * klasa koja pravi objekte troskova
+ * @author marcus
+ *
+ */
 public class UtilsObjekti {
 
+	/**
+	 * javna metoda koja upisuje trosak brige o sebi
+	 * @param textFieldIznosBrigaOSebi iz gui klase
+	 */
 	public static void napraviObjekatBOS(JTextField textFieldIznosBrigaOSebi) {
 		double iznos = Double.parseDouble(textFieldIznosBrigaOSebi.getText());
 		BrigaOSebi brigos = new BrigaOSebi();
@@ -23,6 +32,10 @@ public class UtilsObjekti {
 		
 	}
 
+	/**
+	 * javna metoda koja upisuje trosak edukacije
+	 * @param textFieldIznosEdu iz gui klase
+	 */
 	public static void napraviObjekatEdu(JTextField textFieldIznosEdu) {
 		double iznos = Double.parseDouble(textFieldIznosEdu.getText());
 		Edukacija edu = new Edukacija();
@@ -31,6 +44,10 @@ public class UtilsObjekti {
 		UtilsTroskovi.konvertujTroskove(edu, "data/edu.data");
 	}
 
+	/**
+	 * javna metoda koja upisuje trosak hrane i pica
+	 * @param textFieldHranaIznos iz gui klase
+	 */
 	public static void napraviObjekatHr(JTextField textFieldHranaIznos) {
 		double iznos = Double.parseDouble(textFieldHranaIznos.getText());
 		HranaIPice hrip = new HranaIPice();
@@ -40,6 +57,10 @@ public class UtilsObjekti {
 		
 	}
 
+	/**
+	 * javna metoda koja upisuje iznos mesecnih racuna
+	 * @param textFieldIznosMesRacuni iz gui klase
+	 */
 	public static void napraviObjekatMesRacuni(JTextField textFieldIznosMesRacuni) {
 		double iznos = Double.parseDouble(textFieldIznosMesRacuni.getText());
 		MesecniRacuni mes = new MesecniRacuni();
@@ -49,6 +70,10 @@ public class UtilsObjekti {
 		
 	}
 
+	/**
+	 * jana metoda koja upisuje trosak odece i obuce
+	 * @param textFieldIznosOdIObuca iz gui klase
+	 */
 	public static void napraviObjekatOdIObuca(JTextField textFieldIznosOdIObuca) {
 		double iznos = Double.parseDouble(textFieldIznosOdIObuca.getText());
 		OdecaIObuca odiob = new OdecaIObuca();
@@ -58,6 +83,10 @@ public class UtilsObjekti {
 		
 	}
 
+	/**
+	 * javna metoda koja upisuje trosak prevoza
+	 * @param textFieldIznosPrevoz iz gui klase
+	 */
 	public static void napraviObjekatPrevoz(JTextField textFieldIznosPrevoz) {
 		double iznos = Double.parseDouble(textFieldIznosPrevoz.getText());
 		Prevoz prevoz = new Prevoz();
@@ -67,6 +96,10 @@ public class UtilsObjekti {
 		
 	}
 
+	/**
+	 * javna metoda koja upisuje trosak sporta i rekreacije
+	 * @param textFieldIznosSpIRekr iz gui klase
+	 */
 	public static void napraviObjekatSportIRekr(JTextField textFieldIznosSpIRekr) {
 		SportIRekreacija spir = new SportIRekreacija();
 		double iznos = Double.parseDouble(textFieldIznosSpIRekr.getText());
@@ -75,6 +108,10 @@ public class UtilsObjekti {
 		UtilsTroskovi.konvertujTroskove(spir, "data/sir.data");
 	}
 
+	/**
+	 * javna metoda upisuje trosak stanovanja
+	 * @param textFieldIznosStanovanje iz gui klase
+	 */
 	public static void napraviObjekatStanovanje(JTextField textFieldIznosStanovanje) {
 		TroskoviStanovanja stan = new TroskoviStanovanja();
 		double iznos = Double.parseDouble(textFieldIznosStanovanje.getText());

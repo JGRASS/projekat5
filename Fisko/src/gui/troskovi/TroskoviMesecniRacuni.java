@@ -12,8 +12,6 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import sistem.utils.UtilsObjekti;
-import sistem.utils.UtilsTroskovi;
-
 import java.awt.GridLayout;
 /**
  * Graficka klasa za unos troska iz kategorije Mesecni racuni
@@ -82,7 +80,7 @@ public class TroskoviMesecniRacuni extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		contentPane.setLayout(new GridLayout(0, 2, 20, 0));
+		contentPane.setLayout(new GridLayout(0, 2, 20, 10));
 		contentPane.add(getLblIznos());
 		contentPane.add(getTextField_1());
 		contentPane.add(getBtnGotovo());
