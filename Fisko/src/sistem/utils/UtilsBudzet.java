@@ -1,14 +1,17 @@
 package sistem.utils;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+
+import budzet.Budzet;
 
 public class UtilsBudzet {
 
-	public static void postaviLimite(double iznos){
+	public static void postaviLimite(Budzet budzet){
 			try {
-				PrintWriter out = new PrintWriter("data/limiti.data");
-				out.print(iznos);
+				FileOutputStream out = new FileOutputStream("data/limiti.data");
+				ObjectOutputStream obj = new ObjectOutputStream(out);
+				obj.writeObject(budzet);
+				obj.close();
 				out.close();
 			} catch (IOException e) {
 				e.printStackTrace();

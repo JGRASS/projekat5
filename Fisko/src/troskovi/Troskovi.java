@@ -10,10 +10,6 @@ import java.util.GregorianCalendar;
  */
 public abstract class Troskovi {
 	
-/**
- * Predstavlja 
- */
-	private String naziv;
 	/**
 	 * Predstavlja datum unosa troska
 	 */
@@ -22,17 +18,7 @@ public abstract class Troskovi {
 	 * Predstavlja iznos troska
 	 */
 	private double iznos;
-	/**
-	 * Predstavlja naziv kategorije troskova
-	 */
-	private String vrsta;
-	/**
-	 * Metoda vraca naziv troska, tj. vrednost atributa naziv
-	 * @return naziv troska kao String
-	 */
-	public String getNaziv() {
-		return naziv;
-	}
+	
 	/**
 	 * Metoda vraca datum unosa troska, tj. vrednost atributa datum
 	 * @return datum unosa troska kao GregorianCalendar
@@ -47,14 +33,7 @@ public abstract class Troskovi {
 	public double getIznos() {
 		return iznos;
 	}
-	/**
-	 * Metoda postavlja naziv troska na unetu vrednost
-	 * @param naziv novi naziv troska
-	 */
 	
-	public void setNaziv(String naziv) {
-		this.naziv = naziv;
-	}
 	/**
 	 * Metoda postavlja datum unosa troska na unetu vrednost
 	 * @param datum novi datum unosa troska

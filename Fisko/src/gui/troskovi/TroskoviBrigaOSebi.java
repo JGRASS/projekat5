@@ -1,6 +1,5 @@
 package gui.troskovi;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JButton;
@@ -10,13 +9,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import sistem.utils.UtilsTroskovi;
+import sistem.utils.UtilsObjekti;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+
 
 /**
  * Graficka klasa za unos troska iz kategorije Briga o Sebi
@@ -30,16 +28,35 @@ public class TroskoviBrigaOSebi extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * privatni atribut panel
+	 */
 	private JPanel contentPane;
+	
+	/**
+	 * privatni jlabel iznos
+	 */
 	private JLabel lblIznos;
+	
+	/**
+	 * privatni textField za unos iznosa
+	 * troska Briga o sebi
+	 */
 	private JTextField textFieldIznosBrigaOSebi;
+	
+	/**
+	 * privatno dugme za potvrdjivanje akcije
+	 */
 	private JButton btnGotovo;
+	
+	/**
+	 * privatno dugme za odustajanje od akcije
+	 */
 	private JButton btnOdustani;
-	private JLabel label;
-	private JLabel label_1;
 
 	/**
-	 * Startovanje apliacije
+	 * Startovanje aplikacije
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -61,16 +78,14 @@ public class TroskoviBrigaOSebi extends JFrame {
 		setResizable(false);
 		setTitle("Briga o sebi");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 220, 100);
+		setBounds(100, 100, 240, 100);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		contentPane.setLayout(new GridLayout(0, 2, 0, 0));
+		contentPane.setLayout(new GridLayout(0, 2, 20, 10));
 		contentPane.add(getLblIznos());
 		contentPane.add(getTextField_1());
-		contentPane.add(getLabel());
-		contentPane.add(getLabel_1());
 		contentPane.add(getBtnGotovo());
 		contentPane.add(getBtnOdustani());}
 
@@ -132,30 +147,10 @@ public class TroskoviBrigaOSebi extends JFrame {
 	}
 
 	/**
-	 * Metoda vraca vrednost atributa Label
-	 * @return vrednost atributa Label kao JLabel
-	 */
-	private JLabel getLabel() {
-		if (label == null) {
-			label = new JLabel("");
-		}
-		return label;
-	}
-	/**
-	 * Metoda vraca vrednost atributa Label_1
-	 * @return vrednost atributa Label_1 kao JLabel
-	 */
-	private JLabel getLabel_1() {
-		if (label_1 == null) {
-			label_1 = new JLabel("");
-		}
-		return label_1;
-	}
-	/**
 	 * Metoda koja vrednost atributa textFieldIznosBrigaOSebi prosledjuje kao ulazni parametar
 	 * metodi napraviObjekatBOS klase UtilsTroskovi
 	 */
 	public void napraviObjekat(){
-		UtilsTroskovi.napraviObjekatBOS(textFieldIznosBrigaOSebi);
+		UtilsObjekti.napraviObjekatBOS(textFieldIznosBrigaOSebi);
 	}	
 }

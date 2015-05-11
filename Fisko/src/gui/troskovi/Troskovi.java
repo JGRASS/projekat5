@@ -9,32 +9,17 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.text.html.HTMLDocument.HTMLReader.PreAction;
 
-import sistem.utils.UtilsTroskovi;
-import troskovi.BrigaOSebi;
-import troskovi.Edukacija;
-import troskovi.HranaIPice;
-import troskovi.Izlasci;
-import troskovi.Luksuz;
-import troskovi.MesecniRacuni;
-import troskovi.OdecaIObuca;
-import troskovi.Prevoz;
-import troskovi.SportIRekreacija;
 
 import java.awt.SystemColor;
 
-import javax.swing.JSpinner;
-import javax.swing.SpinnerDateModel;
-
-import java.util.Date;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import javax.swing.JTextField;
+
 
 /**
- * Graficka klasa koja omogucava izbor kategorije troskova za koju zelimo uneti trosak
+ * Graficka klasa koja omogucava izbor kategorije troskova 
+ * za koju zelimo uneti trosak
  * 
  * @author Ana
  *
@@ -45,21 +30,98 @@ public class Troskovi extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * privatni pane;
+	 */
 	private JPanel contentPane;
+	
+	/**
+	 * privatno dugme koje vodi na prozor
+	 * za dodavanje troska za hranu i pice
+	 */
 	private JButton btnHranaIPice;
+	
+	/**
+	 * privatno dugme koje vodi na prozor
+	 * za dodavanje troska odeca i obuca
+	 */
 	private JButton btnOdecaIObuca;
+	
+	/**
+	 * privatno dugme koje vodi na prozor
+	 * za dodavanje troska briga o sebi
+	 */
 	private JButton btnBrigaOSebi;
+	
+	/**
+	 * privatno dugme koje vodi na prozor
+	 * za dodavanje troska stanovanja
+	 */
 	private JButton btnTroskoviStanovanja;
+	
+	/**
+	 * privatno dugme koje vodi na prozor 
+	 * za dodavanje troska mesecnih racuna
+	 */
 	private JButton btnMesecniRacuni;
+	
+	/**
+	 * privatni atribut koji vodi na prozor
+	 * za dodavanje troska sporta i 
+	 * rekreacije
+	 */
 	private JButton btnSportIRekreacija;
+	
+	/**
+	 * privatno dugme koje vodi na prozor
+	 * za dodavanje troska prevoza
+	 */
 	private JButton btnPrevoz;
+	
+	/**
+	 * privatno dugme koje vodi na prozor
+	 * za dodavanje troska edukacije
+	 */
 	private JButton btnEdukacija;
+	
+	/**
+	 * privatno dugme koje vodi na prozor
+	 * za dodavanje troska izlazaka
+	 */
 	private JButton btnIzlasci;
+	
+	/**
+	 * privatno dugme koje vodi na prozor
+	 * za dodavanje troska luksuza
+	 */
 	private JButton btnLuksuz;
+	
+	/**
+	 * privatno dugme za potvrdjivanje akcije
+	 * i upisivanja troskova
+	 */
 	private JButton btnGotovo;
+	
+	/**
+	 * privatno dugme za odustajanje od akcije
+	 */
 	private JButton btnOdustani;
+	
+	/**
+	 * privatni panel
+	 */
 	private JPanel panel;
+	
+	/**
+	 * privatno dugme za postavljanje trenutnog datuma
+	 */
 	private JButton btnPotvrdi;
+	
+	/**
+	 * staticka vrednost kalendara, tj. 
+	 * datuma koji se postavlja
+	 */
 	public static GregorianCalendar date;
 
 	/**

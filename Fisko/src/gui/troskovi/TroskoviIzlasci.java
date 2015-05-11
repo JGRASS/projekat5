@@ -1,6 +1,5 @@
 package gui.troskovi;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,22 +11,45 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import sistem.utils.UtilsTroskovi;
-
+import sistem.utils.UtilsObjekti;
 import java.awt.GridLayout;
 
+/**
+ * Graficka klasa za troskove izlazaka
+ * @author marcus
+ *
+ */
 public class TroskoviIzlasci extends JFrame {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * privatni panel
+	 */
 	private JPanel contentPane;
+	
+	/**
+	 * privatn jlabel za iznos
+	 */
 	private JLabel lblIznos;
+	
+	/**
+	 * privatno dugme za potvrdjivanje akcije
+	 */
 	private JButton btnGotovo;
+	
+	/**
+	 * privatno dugme za odustajanje
+	 */
 	private JButton btnOdustani;
-	private JLabel label;
-	private JLabel label_1;
+	
+	/**
+	 * privatni textField za iznos 
+	 * troska izlaska
+	 */
 	private JTextField textFieldIznosIzlasci;
 
 	/**
@@ -53,16 +75,14 @@ public class TroskoviIzlasci extends JFrame {
 		setTitle("Izlasci");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 220, 100);
+		setBounds(100, 100, 240, 100);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		contentPane.setLayout(new GridLayout(0, 2, 12, 0));
+		contentPane.setLayout(new GridLayout(0, 2, 20, 10));
 		contentPane.add(getLblIznos());
 		contentPane.add(getTextField_1());
-		contentPane.add(getLabel());
-		contentPane.add(getLabel_1());
 		contentPane.add(getBtnGotovo());
 		contentPane.add(getBtnOdustani());}
 
@@ -122,32 +142,11 @@ public class TroskoviIzlasci extends JFrame {
 		}
 		return btnOdustani;
 	}
-
-	/**
-	 * Metoda vraca vrednost atributa Label
-	 * @return vrednost atributa Label kao JLabel
-	 */
-	private JLabel getLabel() {
-		if (label == null) {
-			label = new JLabel("");
-		}
-		return label;
-	}
-	/**
-	 * Metoda vraca vrednost atributa Label_1
-	 * @return vrednost atributa Label_1 kao JLabel
-	 */
-	private JLabel getLabel_1() {
-		if (label_1 == null) {
-			label_1 = new JLabel("");
-		}
-		return label_1;
-	}
 	/**
 	 * Metoda koja vrednost atributa textFieldIznosIzlasci prosledjuje kao ulazni parametar
 	 * metodi napraviObjekatHr klase UtilsTroskovi
 	 */
 	public void napraviObjekat(){
-		UtilsTroskovi.napraviObjekatHr(textFieldIznosIzlasci);
+		UtilsObjekti.napraviObjekatHr(textFieldIznosIzlasci);
 	}
 }

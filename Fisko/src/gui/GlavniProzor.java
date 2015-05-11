@@ -1,6 +1,6 @@
 package gui;
 
-import gui.budzet.Budzet;
+import gui.budzet.BudzetGUI;
 import gui.troskovi.Troskovi;
 
 import java.awt.BorderLayout;
@@ -10,9 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JButton;
 
 import java.awt.event.ActionEvent;
@@ -29,20 +26,52 @@ public class GlavniProzor extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * privatni panel
+	 */
 	private JPanel contentPane;
+	
+	/**
+	 * privatni natpis sa sloganom aplikacije
+	 */
 	private JLabel lblFiskoVa;
+	
+	/**
+	 * privatni panel
+	 */
 	private JPanel panel;
-	private JMenuBar menuBar;
-	private JMenu mnPodeavanja;
-	private JMenu mnONama;
-	private JMenu mnPodaci;
-	private JMenuItem mntmOtvoriIzvetaj;
-	private JMenuItem mntmNewMenuItem;
+	
+	/**
+	 * privatno dugme koje vodi
+	 * ka prozoru za unos budzeta
+	 */
 	private JButton btnBudget;
+	
+	/**
+	 * privatno dugme koje vodi
+	 * ka prozoru za unos troskova
+	 */
 	private JButton btnTroskovi;
+	
+	/**
+	 * privatno dugme koje vodi
+	 * ka prozoru za prikaz izvestaja
+	 * i statistike
+	 */
 	private JButton btnStatistika;
-	private JMenu mnPomo;
+	
+	/**
+	 * privatno natpis sa imenima
+	 * programera aplikacije
+	 */
 	private JLabel lblCopyrightByAna;
+	
+	/**
+	 * privatni natpis sa imenom
+	 * idejnog tvorca aplikacije
+	 */
+	private JLabel lblIdejniTvoracJakov;
 
 	/**
 	 * Kreiranje prozora
@@ -52,7 +81,7 @@ public class GlavniProzor extends JFrame {
 		setResizable(false);
 		setTitle("Fisko");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 352, 109);
+		setBounds(100, 100, 329, 129);
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -83,6 +112,7 @@ public class GlavniProzor extends JFrame {
 			panel.add(getBtnTroskovi());
 			panel.add(getBtnStatistika());
 			panel.add(getLblCopyrightByAna());
+			panel.add(getLblIdejniTvoracJakov());
 		}
 		return panel;
 	}
@@ -127,22 +157,12 @@ public class GlavniProzor extends JFrame {
 		}
 		return btnStatistika;
 	}
-	/**
-	 * Metoda vraca vrednost atributa MnPomo
-	 * @return vrednost atributa MnPomo kao JMenu
-	 */
-	private JMenu getMnPomo() {
-		if (mnPomo == null) {
-			mnPomo = new JMenu("Pomo\u0107");
-		}
-		return mnPomo;
-	}
 	
 	/**
 	 * Metoda koja omogucava vidljivost prozora Budzet
 	 */
 	private void prikaziBudzetProzor() {
-		Budzet prozor = new Budzet ();
+		BudzetGUI prozor = new BudzetGUI ();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 }
@@ -154,10 +174,26 @@ public class GlavniProzor extends JFrame {
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}
+	
+	/**
+	 * privatna metoda koja kreira novi natpis
+	 * @return jlabel sa imenom programera aplikacije
+	 */
 	private JLabel getLblCopyrightByAna() {
 		if (lblCopyrightByAna == null) {
 			lblCopyrightByAna = new JLabel("Copyright by Ana & Putnich");
 		}
 		return lblCopyrightByAna;
+	}
+	
+	/**
+	 * privatna metoda koja kreira novi natpis
+	 * @return jlabel sa imenom idejnog tvorca aplikacije
+	 */
+	private JLabel getLblIdejniTvoracJakov() {
+		if (lblIdejniTvoracJakov == null) {
+			lblIdejniTvoracJakov = new JLabel("Idejni tvorac: Jakov");
+		}
+		return lblIdejniTvoracJakov;
 	}
 }

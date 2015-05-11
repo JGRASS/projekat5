@@ -1,8 +1,8 @@
 package gui.budzet;
 
-	import java.awt.EventQueue;
+import java.awt.EventQueue;
 
-	import javax.swing.JFrame;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -14,38 +14,69 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 
+import budzet.Budzet;
 import sistem.utils.UtilsBudzet;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+
 /**
- * Graficka klasa za unos budzeta za odredjeni vremeski period
+ * Graficka klasa za unos budzeta za odredjeni vremesnki period
  * 
  * @author Ana
  *
  */
-	public class Budzet extends JFrame {
+	public class BudzetGUI extends JFrame {
 
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * privatni panel
+		 */
 		private JPanel contentPane;
+		
+		/**
+		 * privatni jlabel za iznos
+		 */
 		private JLabel lblIznos;
+		
+		/**
+		 * privatni textField za unos iznosa budzeta
+		 */
 		private JTextField textFieldznosBudzet;
+		
+		/**
+		 * privatni jlabel za period budzeta
+		 */
 		private JLabel lblPeriod;
-		private JComboBox comboBox;
+		
+		/**
+		 * privatni combo box u vidu string-a
+		 */
+		private JComboBox<String> comboBox;
+		
+		/**
+		 * privatno dugme za potvrdjivanje akcije
+		 */
 		private JButton btnPotvrdi;
+		
+		/**
+		 * privatno dugme za odustajanje od akcije
+		 */
 		private JButton btnOdustani;
 
 		/**
-		 * Startovanje apliacije
+		 * Startovanje aplikacije
 		 */
 		public static void main(String[] args) {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						Budzet frame = new Budzet();
+						BudzetGUI frame = new BudzetGUI();
 						frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -57,7 +88,7 @@ import java.awt.event.ActionEvent;
 		/**
 		 * Kreiranje prozora
 		 */
-		public Budzet() {
+		public BudzetGUI() {
 			setTitle("Budzet");
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setBounds(100, 100, 328, 129);
@@ -108,10 +139,11 @@ import java.awt.event.ActionEvent;
 		 * Metoda vraca vrednost atributa ComboBox
 		 * @return vrednost atributa ComboBox kao JComboBox
 		 */
-		private JComboBox getComboBox() {
+		private JComboBox<String> getComboBox() {
 			if (comboBox == null) {
-				comboBox = new JComboBox();
-				comboBox.setModel(new DefaultComboBoxModel(new String[] {"7", "15", "30"}));
+				comboBox = new JComboBox<String>();
+				comboBox.setModel(new DefaultComboBoxModel<String>(
+						new String[] {"7", "15", "30"}));
 			}
 			return comboBox;
 		}
@@ -148,7 +180,9 @@ import java.awt.event.ActionEvent;
 		 */
 		public void proslediLimite (){
 			double iznos = Double.parseDouble(textFieldznosBudzet.getText());
-			UtilsBudzet.postaviLimite(iznos);
+			Budzet b = new Budzet();
+			b.setIznos(iznos);
+			UtilsBudzet.postaviLimite(b);
 		}
 	}
 
