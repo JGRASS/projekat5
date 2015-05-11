@@ -29,8 +29,6 @@ public class TroskoviSportIRekreacija extends JFrame {
 	private JButton btnOdustani;
 	private JLabel label;
 	private JLabel label_1;
-	private JLabel lblNaziv;
-	private JTextField textFieldNazivSpIRekr;
 
 	/**
 	 * Launch the application.
@@ -55,15 +53,13 @@ public class TroskoviSportIRekreacija extends JFrame {
 		setTitle("Sport i rekreacija");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 231, 161);
+		setBounds(100, 100, 220, 100);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		contentPane.setLayout(new GridLayout(0, 2, 12, 0));
-		contentPane.add(getLblNaziv());
 		contentPane.add(getLblIznos());
-		contentPane.add(getTextField_1_1());
 		contentPane.add(getTextField_1());
 		contentPane.add(getLabel());
 		contentPane.add(getLabel_1());
@@ -122,21 +118,8 @@ public class TroskoviSportIRekreacija extends JFrame {
 		}
 		return label_1;
 	}
-	private JLabel getLblNaziv() {
-		if (lblNaziv == null) {
-			lblNaziv = new JLabel("Naziv");
-		}
-		return lblNaziv;
-	}
-	private JTextField getTextField_1_1() {
-		if (textFieldNazivSpIRekr == null) {
-			textFieldNazivSpIRekr = new JTextField();
-			textFieldNazivSpIRekr.setColumns(10);
-		}
-		return textFieldNazivSpIRekr;
-	}
 	
 	public void napraviObjekat(){
-		UtilsTroskovi.napraviObjekatSportIRekr(textFieldNazivSpIRekr, textFieldIznosSpIRekr);
+		UtilsTroskovi.napraviObjekatSportIRekr(textFieldIznosSpIRekr);
 	}
 }

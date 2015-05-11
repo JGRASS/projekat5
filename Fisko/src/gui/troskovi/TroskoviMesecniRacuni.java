@@ -29,8 +29,6 @@ public class TroskoviMesecniRacuni extends JFrame {
 	private JButton btnOdustani;
 	private JLabel label;
 	private JLabel label_1;
-	private JLabel lblNewLabel;
-	private JTextField textFieldNazivMesRacuni;
 
 	/**
 	 * Launch the application.
@@ -55,15 +53,13 @@ public class TroskoviMesecniRacuni extends JFrame {
 		setTitle("Mesečni računi");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 231, 161);
+		setBounds(100, 100, 220, 100);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		contentPane.setLayout(new GridLayout(0, 2, 12, 0));
-		contentPane.add(getLblNewLabel());
 		contentPane.add(getLblIznos());
-		contentPane.add(getTextField_1_1());
 		contentPane.add(getTextField_1());
 		contentPane.add(getLabel());
 		contentPane.add(getLabel_1());
@@ -122,21 +118,8 @@ public class TroskoviMesecniRacuni extends JFrame {
 		}
 		return label_1;
 	}
-	private JLabel getLblNewLabel() {
-		if (lblNewLabel == null) {
-			lblNewLabel = new JLabel("Naziv");
-		}
-		return lblNewLabel;
-	}
-	private JTextField getTextField_1_1() {
-		if (textFieldNazivMesRacuni == null) {
-			textFieldNazivMesRacuni = new JTextField();
-			textFieldNazivMesRacuni.setColumns(10);
-		}
-		return textFieldNazivMesRacuni;
-	}
 	
 	public void napraviObjekat(){
-		UtilsTroskovi.napraviObjekatMesRacuni(textFieldNazivMesRacuni, textFieldIznosMesRacuni);
+		UtilsTroskovi.napraviObjekatMesRacuni(textFieldIznosMesRacuni);
 	}
 }

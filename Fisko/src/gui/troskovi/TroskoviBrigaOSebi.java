@@ -31,8 +31,6 @@ public class TroskoviBrigaOSebi extends JFrame {
 	private JButton btnOdustani;
 	private JLabel label;
 	private JLabel label_1;
-	private JLabel lblNewLabel;
-	private JTextField textFieldNazivBrigaOSebi;
 
 	/**
 	 * Launch the application.
@@ -54,17 +52,16 @@ public class TroskoviBrigaOSebi extends JFrame {
 	 * Create the frame.
 	 */
 	public TroskoviBrigaOSebi() {
+		setResizable(false);
 		setTitle("Briga o sebi");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 231, 161);
+		setBounds(100, 100, 220, 100);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		contentPane.setLayout(new GridLayout(0, 2, 0, 0));
-		contentPane.add(getLblNewLabel());
 		contentPane.add(getLblIznos());
-		contentPane.add(getTextFieldNazivBrigaOSebi());
 		contentPane.add(getTextField_1());
 		contentPane.add(getLabel());
 		contentPane.add(getLabel_1());
@@ -123,21 +120,8 @@ public class TroskoviBrigaOSebi extends JFrame {
 		}
 		return label_1;
 	}
-	private JLabel getLblNewLabel() {
-		if (lblNewLabel == null) {
-			lblNewLabel = new JLabel("Naziv");
-		}
-		return lblNewLabel;
-	}
-	private JTextField getTextFieldNazivBrigaOSebi() {
-		if (textFieldNazivBrigaOSebi == null) {
-			textFieldNazivBrigaOSebi = new JTextField();
-			textFieldNazivBrigaOSebi.setColumns(10);
-		}
-		return textFieldNazivBrigaOSebi;
-	}
 	
 	public void napraviObjekat(){
-		UtilsTroskovi.napraviObjekatBOS(textFieldNazivBrigaOSebi, textFieldIznosBrigaOSebi);
+		UtilsTroskovi.napraviObjekatBOS(textFieldIznosBrigaOSebi);
 	}	
 }

@@ -28,8 +28,6 @@ public class TroskoviStanovanja extends JFrame {
 	private JButton btnGotovo;
 	private JButton btnOdustani;
 	private JLabel label;
-	private JLabel lblNewLabel;
-	private JTextField textFieldNazivStanovanje;
 	private JPanel panel;
 
 	/**
@@ -55,15 +53,13 @@ public class TroskoviStanovanja extends JFrame {
 		setTitle("Stanovanje");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 231, 161);
+		setBounds(100, 100, 220, 100);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		contentPane.setLayout(new GridLayout(0, 2, 12, 0));
-		contentPane.add(getLblNewLabel());
 		contentPane.add(getLblIznos());
-		contentPane.add(getTextField_1_1());
 		contentPane.add(getTextField_1());
 		contentPane.add(getPanel());
 		contentPane.add(getLabel());
@@ -116,19 +112,6 @@ public class TroskoviStanovanja extends JFrame {
 		}
 		return label;
 	}
-	private JLabel getLblNewLabel() {
-		if (lblNewLabel == null) {
-			lblNewLabel = new JLabel("Naziv");
-		}
-		return lblNewLabel;
-	}
-	private JTextField getTextField_1_1() {
-		if (textFieldNazivStanovanje == null) {
-			textFieldNazivStanovanje = new JTextField();
-			textFieldNazivStanovanje.setColumns(10);
-		}
-		return textFieldNazivStanovanje;
-	}
 	private JPanel getPanel() {
 		if (panel == null) {
 			panel = new JPanel();
@@ -137,6 +120,6 @@ public class TroskoviStanovanja extends JFrame {
 	}
 	
 	public void napraviObjekat(){
-		UtilsTroskovi.napraviObjekatStanovanje(textFieldNazivStanovanje, textFieldIznosStanovanje);
+		UtilsTroskovi.napraviObjekatStanovanje(textFieldIznosStanovanje);
 	}
 }

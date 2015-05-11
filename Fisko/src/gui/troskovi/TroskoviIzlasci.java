@@ -24,12 +24,10 @@ public class TroskoviIzlasci extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel lblIznos;
-	private JTextField textFieldNazivIzlasci;
 	private JButton btnGotovo;
 	private JButton btnOdustani;
 	private JLabel label;
 	private JLabel label_1;
-	private JLabel lblNewLabel;
 	private JTextField textFieldIznosIzlasci;
 
 	/**
@@ -55,15 +53,13 @@ public class TroskoviIzlasci extends JFrame {
 		setTitle("Izlasci");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 231, 161);
+		setBounds(100, 100, 220, 100);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		contentPane.setLayout(new GridLayout(0, 2, 12, 0));
-		contentPane.add(getLblNewLabel());
 		contentPane.add(getLblIznos());
-		contentPane.add(getTextField_1());
 		contentPane.add(getTextField_1_1());
 		contentPane.add(getLabel());
 		contentPane.add(getLabel_1());
@@ -76,14 +72,6 @@ public class TroskoviIzlasci extends JFrame {
 			lblIznos.setBounds(10, 11, 55, 14);
 		}
 		return lblIznos;
-	}
-	private JTextField getTextField_1() {
-		if (textFieldNazivIzlasci == null) {
-			textFieldNazivIzlasci = new JTextField();
-			textFieldNazivIzlasci.setBounds(10, 36, 196, 23);
-			textFieldNazivIzlasci.setColumns(10);
-		}
-		return textFieldNazivIzlasci;
 	}
 	private JButton getBtnGotovo() {
 		if (btnGotovo == null) {
@@ -122,12 +110,6 @@ public class TroskoviIzlasci extends JFrame {
 		}
 		return label_1;
 	}
-	private JLabel getLblNewLabel() {
-		if (lblNewLabel == null) {
-			lblNewLabel = new JLabel("Naziv");
-		}
-		return lblNewLabel;
-	}
 	private JTextField getTextField_1_1() {
 		if (textFieldIznosIzlasci == null) {
 			textFieldIznosIzlasci = new JTextField();
@@ -137,6 +119,6 @@ public class TroskoviIzlasci extends JFrame {
 	}
 	
 	public void napraviObjekat(){
-		UtilsTroskovi.napraviObjekatHr(textFieldNazivIzlasci, textFieldIznosIzlasci);
+		UtilsTroskovi.napraviObjekatHr(textFieldIznosIzlasci);
 	}
 }

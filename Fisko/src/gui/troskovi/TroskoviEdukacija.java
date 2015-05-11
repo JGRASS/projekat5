@@ -29,8 +29,6 @@ public class TroskoviEdukacija extends JFrame {
 	private JButton btnOdustani;
 	private JLabel label;
 	private JLabel label_1;
-	private JLabel lblNewLabel;
-	private JTextField textFieldNazivEdu;
 
 	/**
 	 * Launch the application.
@@ -54,15 +52,13 @@ public class TroskoviEdukacija extends JFrame {
 	public TroskoviEdukacija() {
 		setTitle("Edukacija");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 231, 161);
+		setBounds(100, 100, 220, 100);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		contentPane.setLayout(new GridLayout(0, 2, 12, 0));
-		contentPane.add(getLblNewLabel());
 		contentPane.add(getLblIznos());
-		contentPane.add(getTextField_1_1());
 		contentPane.add(getTextField_1());
 		contentPane.add(getLabel());
 		contentPane.add(getLabel_1());
@@ -121,21 +117,8 @@ public class TroskoviEdukacija extends JFrame {
 		}
 		return label_1;
 	}
-	private JLabel getLblNewLabel() {
-		if (lblNewLabel == null) {
-			lblNewLabel = new JLabel("Naziv");
-		}
-		return lblNewLabel;
-	}
-	private JTextField getTextField_1_1() {
-		if (textFieldNazivEdu == null) {
-			textFieldNazivEdu = new JTextField();
-			textFieldNazivEdu.setColumns(10);
-		}
-		return textFieldNazivEdu;
-	}
 	
 	public void napraviObjekat(){
-		UtilsTroskovi.napraviObjekatEdu(textFieldNazivEdu, textFieldIznosEdu);
+		UtilsTroskovi.napraviObjekatEdu(textFieldIznosEdu);
 	}
 }
