@@ -22,51 +22,52 @@ public class UtilsStatistika {
 		/**
 		 * iznos troskova brige o sebi kao double
 		 */
-		double bos = UtilsTroskovi.ucitajTroskove("data/bos.data");
+		String bos = UtilsTroskovi.ucitajTroskove("data/bos.data");
 		
 		/**
 		 * iznos troskova edukacije kao double
 		 */
-		double edu = UtilsTroskovi.ucitajTroskove("data/edu.data");
+		String edu = UtilsTroskovi.ucitajTroskove("data/edu.data");
 		
 		/**
 		 * iznos troskova hrane i pica kao double
 		 */
-		double hip = UtilsTroskovi.ucitajTroskove("data/hip.data");
+		String hip = UtilsTroskovi.ucitajTroskove("data/hip.data");
 		
 		/**
 		 * iznos troskova mesecnih racuna kao double
 		 */
-		double mr = UtilsTroskovi.ucitajTroskove("data/mr.data");
+		String mr = UtilsTroskovi.ucitajTroskove("data/mr.data");
 		
 		/**
 		 * iznos troskova odece i obuce kao double
 		 */
-		double oio = UtilsTroskovi.ucitajTroskove("data/oio.data");
+		String oio = UtilsTroskovi.ucitajTroskove("data/oio.data");
 		
 		/**
 		 * iznos troskova prevoza kao double
 		 */
-		double pr = UtilsTroskovi.ucitajTroskove("data/pr.data");
+		String pr = UtilsTroskovi.ucitajTroskove("data/pr.data");
 		
 		/**
 		 * iznos troskova sporta i rekreacije kao double
 		 */
-		double sir = UtilsTroskovi.ucitajTroskove("data/sir.data");
+		String sir = UtilsTroskovi.ucitajTroskove("data/sir.data");
 		
 		/**
 		 * iznos troskova stanovanja kao double
 		 */
-		double ts = UtilsTroskovi.ucitajTroskove("data/ts.data");
+		String ts = UtilsTroskovi.ucitajTroskove("data/ts.data");
 		
 		/**
 		 * string iznosa
 		 */
-		String text = "Dnevni budzet: "+budzet+"Trosak brige o sebi: "+
-		bos+". Trosak edukacije: "+edu+". Trosak hrane i pica: "+hip+
-		". Trosak mesecnih racuna: "+mr+". Trosak odece i obuce: "+oio+
-		". Trosak prevoza: "+pr+". Trosak sporta i rekreacije: "+sir+
-		". Trosak stanovanja: "+ts;
+		
+		String text = "Dnevni budzet: "+budzet+"\n"+"Trosak brige o sebi: "+
+		bos+"\n"+"Trosak edukacije: "+edu+"\n"+"Trosak hrane i pica: "+hip+"\n"+
+		"Trosak mesecnih racuna: "+mr+"\n"+"Trosak odece i obuce: "+oio+"\n"+
+		"Trosak prevoza: "+pr+"\n"+"Trosak sporta i rekreacije: "+sir+"\n"+
+		"Trosak stanovanja: "+ts+"\n";
 		
 		return text;
 	}

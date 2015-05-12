@@ -12,8 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-import budzet.Budzet;
 import sistem.utils.UtilsBudzet;
+import sistem.utils.UtilsTroskovi;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -77,7 +77,7 @@ import java.awt.event.ActionEvent;
 		 */
 		public BudzetGUI() {
 			setTitle("Budzet");
-			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			setBounds(100, 100, 257, 91);
 			contentPane = new JPanel();
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -123,6 +123,7 @@ import java.awt.event.ActionEvent;
 					public void actionPerformed(ActionEvent arg0) {
 						proslediLimite();
 						dispose();
+						UtilsTroskovi.kreirajFajlove();
 					}
 				});
 			}
@@ -152,9 +153,7 @@ import java.awt.event.ActionEvent;
 		 */
 		public void proslediLimite (){
 			double iznos = Double.parseDouble(textFieldznosBudzet.getText());
-			Budzet b = new Budzet();
-			b.setIznos(iznos);
-			UtilsBudzet.postaviLimite(b);
+			UtilsBudzet.postaviLimite(iznos);
 		}
 	}
 

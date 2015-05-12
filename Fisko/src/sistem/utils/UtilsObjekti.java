@@ -1,16 +1,8 @@
 package sistem.utils;
 
-import gui.troskovi.Troskovi;
+import gui.troskovi.TroskoviGUI;
+import troskovi.Troskovi;
 import javax.swing.JTextField;
-
-import troskovi.BrigaOSebi;
-import troskovi.Edukacija;
-import troskovi.HranaIPice;
-import troskovi.MesecniRacuni;
-import troskovi.OdecaIObuca;
-import troskovi.Prevoz;
-import troskovi.SportIRekreacija;
-import troskovi.TroskoviStanovanja;
 
 /**
  * klasa koja pravi objekte troskova
@@ -25,9 +17,9 @@ public class UtilsObjekti {
 	 */
 	public static void napraviObjekatBOS(JTextField textFieldIznosBrigaOSebi) {
 		double iznos = Double.parseDouble(textFieldIznosBrigaOSebi.getText());
-		BrigaOSebi brigos = new BrigaOSebi();
+		Troskovi brigos = new Troskovi();
 		brigos.setIznos(iznos);
-		brigos.setDatum(Troskovi.date);
+		brigos.setDatum(TroskoviGUI.date);
 		UtilsTroskovi.konvertujTroskove(brigos, "data/bos.data");
 		
 	}
@@ -38,9 +30,9 @@ public class UtilsObjekti {
 	 */
 	public static void napraviObjekatEdu(JTextField textFieldIznosEdu) {
 		double iznos = Double.parseDouble(textFieldIznosEdu.getText());
-		Edukacija edu = new Edukacija();
+		Troskovi edu = new Troskovi();
 		edu.setIznos(iznos);
-		edu.setDatum(Troskovi.date);
+		edu.setDatum(TroskoviGUI.date);
 		UtilsTroskovi.konvertujTroskove(edu, "data/edu.data");
 	}
 
@@ -50,9 +42,9 @@ public class UtilsObjekti {
 	 */
 	public static void napraviObjekatHr(JTextField textFieldHranaIznos) {
 		double iznos = Double.parseDouble(textFieldHranaIznos.getText());
-		HranaIPice hrip = new HranaIPice();
+		Troskovi hrip = new Troskovi();
 		hrip.setIznos(iznos);
-		hrip.setDatum(Troskovi.date);
+		hrip.setDatum(TroskoviGUI.date);
 		UtilsTroskovi.konvertujTroskove(hrip, "data/hip.data");
 		
 	}
@@ -63,9 +55,9 @@ public class UtilsObjekti {
 	 */
 	public static void napraviObjekatMesRacuni(JTextField textFieldIznosMesRacuni) {
 		double iznos = Double.parseDouble(textFieldIznosMesRacuni.getText());
-		MesecniRacuni mes = new MesecniRacuni();
+		Troskovi mes = new Troskovi();
 		mes.setIznos(iznos);
-		mes.setDatum(Troskovi.date);
+		mes.setDatum(TroskoviGUI.date);
 		UtilsTroskovi.konvertujTroskove(mes, "data/mr.data");
 		
 	}
@@ -76,9 +68,9 @@ public class UtilsObjekti {
 	 */
 	public static void napraviObjekatOdIObuca(JTextField textFieldIznosOdIObuca) {
 		double iznos = Double.parseDouble(textFieldIznosOdIObuca.getText());
-		OdecaIObuca odiob = new OdecaIObuca();
+		Troskovi odiob = new Troskovi();
 		odiob.setIznos(iznos);
-		odiob.setDatum(Troskovi.date);
+		odiob.setDatum(TroskoviGUI.date);
 		UtilsTroskovi.konvertujTroskove(odiob, "data/oio.data");
 		
 	}
@@ -89,9 +81,9 @@ public class UtilsObjekti {
 	 */
 	public static void napraviObjekatPrevoz(JTextField textFieldIznosPrevoz) {
 		double iznos = Double.parseDouble(textFieldIznosPrevoz.getText());
-		Prevoz prevoz = new Prevoz();
+		Troskovi prevoz = new Troskovi();
 		prevoz.setIznos(iznos);
-		prevoz.setDatum(Troskovi.date);
+		prevoz.setDatum(TroskoviGUI.date);
 		UtilsTroskovi.konvertujTroskove(prevoz, "data/pr.data");
 		
 	}
@@ -101,22 +93,22 @@ public class UtilsObjekti {
 	 * @param textFieldIznosSpIRekr iz gui klase
 	 */
 	public static void napraviObjekatSportIRekr(JTextField textFieldIznosSpIRekr) {
-		SportIRekreacija spir = new SportIRekreacija();
+		Troskovi spir = new Troskovi();
 		double iznos = Double.parseDouble(textFieldIznosSpIRekr.getText());
 		spir.setIznos(iznos);
-		spir.setDatum(Troskovi.date);
+		spir.setDatum(TroskoviGUI.date);
 		UtilsTroskovi.konvertujTroskove(spir, "data/sir.data");
 	}
-
+ 
 	/**
 	 * javna metoda upisuje trosak stanovanja
 	 * @param textFieldIznosStanovanje iz gui klase
 	 */
 	public static void napraviObjekatStanovanje(JTextField textFieldIznosStanovanje) {
-		TroskoviStanovanja stan = new TroskoviStanovanja();
+		Troskovi stan = new Troskovi();
 		double iznos = Double.parseDouble(textFieldIznosStanovanje.getText());
 		stan.setIznos(iznos);
-		stan.setDatum(Troskovi.date);
+		stan.setDatum(TroskoviGUI.date);
 		UtilsTroskovi.konvertujTroskove(stan, "data/ts.data");
 	}
 

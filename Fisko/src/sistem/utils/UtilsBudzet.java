@@ -2,8 +2,6 @@ package sistem.utils;
 
 import java.io.*;
 
-import budzet.Budzet;
-
 /**
  * klasa koja predstavlja
  * osnovne operacije sa objektima 
@@ -20,10 +18,11 @@ public class UtilsBudzet implements Serializable {
 	 * kao limit
 	 * @param budzet, kao objekat klase Budzet
 	 */
-	public static void postaviLimite(Budzet budzet){
+	public static void postaviLimite(double iznos){
 		try {
-				PrintWriter out = new PrintWriter("data/limiti.data");
-				out.print(budzet.getIznos());
+				FileWriter file = new FileWriter("data/limiti.data");
+				PrintWriter out = new PrintWriter(file);
+				out.print(iznos);
 				out.close();
 				
 			} catch (Exception e) {
@@ -39,10 +38,12 @@ public class UtilsBudzet implements Serializable {
 	public static double ucitajLimite(){
 		double iznos = 0;
 		try {
-			BufferedReader  in = new BufferedReader(new FileReader("data/limiti.data"));
-			iznos = in.read();
+			BufferedReader  in = new BufferedReader(
+					new FileReader("data/limiti.data"));
+			String s = in.readLine(); 
+			iznos = Double.parseDouble(s);
 			in.close();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return iznos;

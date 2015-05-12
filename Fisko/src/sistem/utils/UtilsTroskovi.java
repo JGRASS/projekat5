@@ -1,10 +1,11 @@
 package sistem.utils;
 
 import java.io.*;
+import java.util.GregorianCalendar;
+
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import budzet.Budzet;
 import troskovi.Troskovi;
 
 /**
@@ -20,39 +21,33 @@ public class UtilsTroskovi {
 	 * @param o kao objekat
 	 * @param path kao string
 	 */
-	public static void konvertujTroskove(Object o, String path){
-		Budzet budzet = null;
-		double iznos2 = 0;
-		if(o instanceof Troskovi){
-			BufferedReader in;
-			double trosak = ((Troskovi) o).getIznos();
+	public static void konvertujTroskove(Troskovi t, String path){
+		double budzet = UtilsBudzet.ucitajLimite();
+		double trosak = t.getIznos();
+		double ukupno;
+		ukupno = budzet - trosak;
+		if(ukupno<0){ 
+			new JOptionPane();
+			JOptionPane.showMessageDialog(
+				new JPanel(), "Prekoracili ste iznos budzeta");
+		} 
+		else {
+			budzet = budzet - trosak;
 			try {
-				in = new BufferedReader(new FileReader("data/limiti.data"));
-				iznos2 = Double.parseDouble(in.readLine());
-				double ukupno = iznos2 - trosak;
-				in.close();
-				if(ukupno>=0){ 
-					iznos2 = iznos2-trosak;
-					try {
-						FileOutputStream out = new FileOutputStream(path);
-						ObjectOutputStream objOut = 
-								new ObjectOutputStream(out);
-						objOut.writeObject(o);
-						objOut.close();
-						out.close();
-					} catch (Exception e) {
-						e.printStackTrace();
-					}} else {
-					new JOptionPane();
-					JOptionPane.showMessageDialog(
-							new JPanel(), "Prekoracili ste iznos budzeta");
-				}
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
+				FileWriter file = new FileWriter(path, true);
+				PrintWriter out = new PrintWriter(file);
+				out.println(t.getIznos()+":"+
+						t.getDatum().get(GregorianCalendar.DAY_OF_MONTH)+"."+
+						t.getDatum().get(GregorianCalendar.MONTH+1)+"."+
+						t.getDatum().get(GregorianCalendar.YEAR)+".");
+				out.close();
+				UtilsBudzet.postaviLimite(budzet);
+			} 
+			catch (Exception e) {
+				e.printStackTrace();
+			}	
 		}
-	
-		UtilsBudzet.postaviLimite(budzet);
+		
 	}
 	
 	/**
@@ -60,16 +55,43 @@ public class UtilsTroskovi {
 	 * @param path kaos tring putanje ka fajlu
 	 * @return ucitan iznos kao double
 	 */
-	public static double ucitajTroskove(String path){
+	public static String ucitajTroskove(String path){
 		BufferedReader in;
-		double iznos = 0;
+		String txt = "";
 		try {
 			in = new BufferedReader(new FileReader(path));
-			iznos = in.read();
+			txt = in.readLine();
 			in.close();
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			e.printStackTrace();
 		}
-		return iznos;
+		return txt;
+	}
+	
+	public static void kreirajFajlove(){
+		
+		try {
+			File ts = new File("data/ts.data");
+			ts.createNewFile();
+			File sir = new File("data/sir.data");
+			sir.createNewFile();
+			File pr = new File("data/pr.data"); 
+			pr.createNewFile();
+			File oio = new File("data/oio.data");
+			oio.createNewFile();
+			File mr = new File("data/mr.data");
+			mr.createNewFile();
+			File hip = new File("data/hip.data");
+			hip.createNewFile();
+			File edu = new File("data/edu.data");
+			edu.createNewFile();
+			File bos = new File("data/bos.data");
+			bos.createNewFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 }

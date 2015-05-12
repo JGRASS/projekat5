@@ -35,7 +35,7 @@ public class Statistika extends JFrame {
 	public Statistika() {
 		setTitle("Statistika");
 		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -51,7 +51,7 @@ public class Statistika extends JFrame {
 		/**
 		 * tekstualno polje za prikaz izvestaja
 		 */
-		JTextArea textArea = new JTextArea();
+		final JTextArea textArea = new JTextArea();
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
 		textArea.setEditable(false);
@@ -71,7 +71,8 @@ public class Statistika extends JFrame {
 		JButton btnPri = new JButton("Prikaži");
 		btnPri.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				UtilsStatistika.prikaziIzvestaj();
+				String izvestaj = UtilsStatistika.prikaziIzvestaj();
+				textArea.setText(izvestaj);
 			}
 		});
 		panel.add(btnPri);

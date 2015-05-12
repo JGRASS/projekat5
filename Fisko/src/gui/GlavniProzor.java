@@ -2,7 +2,7 @@ package gui;
 
 import gui.budzet.BudzetGUI;
 import gui.statistika.Statistika;
-import gui.troskovi.Troskovi;
+import gui.troskovi.TroskoviGUI;
 
 import java.awt.BorderLayout;
 
@@ -12,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
@@ -183,7 +184,7 @@ public class GlavniProzor extends JFrame {
 	 * Metoda koja omogucava vidljivost prozora Troskovi
 	 */
 	private void prikaziTroskoviProzor() {
-		Troskovi prozor = new Troskovi ();
+		TroskoviGUI prozor = new TroskoviGUI();
 		prozor.setLocationRelativeTo(contentPane);
 		prozor.setVisible(true);
 	}

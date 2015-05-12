@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
  * @author Ana
  *
  */
-public abstract class Troskovi {
+public class Troskovi {
 	
 	/**
 	 * Predstavlja datum unosa troska

@@ -1,6 +1,5 @@
 package gui.troskovi;
 
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -52,22 +51,6 @@ public class TroskoviStanovanja extends JFrame {
 	 * privatno dugme za odustajanje od akcije
 	 */
 	private JButton btnOdustani;
-
-	/**
-	 * Startovanje aplikacije
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TroskoviStanovanja frame = new TroskoviStanovanja();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Kreiranje prozora

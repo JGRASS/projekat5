@@ -1,6 +1,5 @@
 package gui.troskovi;
 
-import java.awt.EventQueue;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +23,7 @@ import java.util.GregorianCalendar;
  * @author Ana
  *
  */
-public class Troskovi extends JFrame {
+public class TroskoviGUI extends JFrame {
 
 	/**
 	 * 
@@ -111,7 +110,7 @@ public class Troskovi extends JFrame {
 	/**
 	 * privatno dugme za postavljanje trenutnog datuma
 	 */
-	private JButton btnPotvrdi;
+	private JButton btnCal;
 	
 	/**
 	 * staticka vrednost kalendara, tj. 
@@ -120,25 +119,9 @@ public class Troskovi extends JFrame {
 	public static GregorianCalendar date;
 
 	/**
-	 * Startovanje apliacije
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Troskovi frame = new Troskovi();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Kreiranje prozora
 	 */
-	public Troskovi() {
+	public TroskoviGUI() {
 		setTitle("Troškovi");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -432,14 +415,14 @@ public class Troskovi extends JFrame {
 		return panel;
 	}
 	/**
-	 * Metoda vraca vrednost atributa BtnPotvrdi
-	 * @return vrednost atributa BtnPotvrdi kao JButton
+	 * Metoda vraca vrednost atributa BtnCal
+	 * @return vrednost atributa BtnCal kao JButton
 	 */
 	private JButton getBtnPotvrdi() {
-		if (btnPotvrdi == null) {
-			btnPotvrdi = new JButton("Postavi datum");
-			btnPotvrdi.setBounds(12, 0, 159, 18);
-			btnPotvrdi.addActionListener(new ActionListener() {
+		if (btnCal == null) {
+			btnCal = new JButton("Postavi datum");
+			btnCal.setBounds(12, 0, 159, 18);
+			btnCal.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					btnBrigaOSebi.setEnabled(true);
 					btnEdukacija.setEnabled(true);
@@ -449,7 +432,7 @@ public class Troskovi extends JFrame {
 					btnLuksuz.setEnabled(true);
 					btnMesecniRacuni.setEnabled(true);
 					btnOdecaIObuca.setEnabled(true);
-					btnPotvrdi.setEnabled(true);
+					btnCal.setEnabled(true);
 					btnPrevoz.setEnabled(true);
 					btnSportIRekreacija.setEnabled(true);
 					btnTroskoviStanovanja.setEnabled(true);
@@ -457,6 +440,6 @@ public class Troskovi extends JFrame {
 				}
 			});
 		}
-		return btnPotvrdi;
+		return btnCal;
 	}
 }
