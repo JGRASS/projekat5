@@ -1,4 +1,4 @@
-package troskovi;
+package sistem.troskovi;
 
 import java.util.GregorianCalendar;
 

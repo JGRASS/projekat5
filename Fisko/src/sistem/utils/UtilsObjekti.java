@@ -1,7 +1,8 @@
 package sistem.utils;
 
 import gui.troskovi.TroskoviGUI;
-import troskovi.Troskovi;
+import sistem.troskovi.Troskovi;
+
 import javax.swing.JTextField;
 
 /**

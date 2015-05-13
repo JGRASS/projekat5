@@ -2,9 +2,14 @@ package troskovi;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.GregorianCalendar;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import sistem.troskovi.Troskovi;
+import sun.util.calendar.Gregorian;
 
 public class TroskoviTest {
 
@@ -21,10 +26,16 @@ public class TroskoviTest {
 	}
 
 	@Test
-	public void testSetIznos() {
+	public void testSetGetIznos() {
 		t.setIznos(600.0);
 		assertEquals(600.0, t.getIznos(), 0);
 	}
 
+	@Test
+	public void testDatum(){
+		GregorianCalendar gc = new GregorianCalendar();
+		t.setDatum(gc);
+		assertEquals(gc, t.getDatum());
+	}
 
 }

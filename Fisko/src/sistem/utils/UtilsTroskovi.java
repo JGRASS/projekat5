@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import troskovi.Troskovi;
+import sistem.troskovi.Troskovi;
 
 /**
  * klasa pomocnih metoda za klasu Troskovi
@@ -37,8 +37,8 @@ public class UtilsTroskovi {
 				FileWriter file = new FileWriter(path, true);
 				PrintWriter out = new PrintWriter(file);
 				out.println(t.getIznos()+":"+
-						t.getDatum().get(GregorianCalendar.DAY_OF_MONTH)+"."+
-						t.getDatum().get(GregorianCalendar.MONTH+1)+"."+
+						t.getDatum().get(GregorianCalendar.DAY_OF_MONTH)+"."+(
+						t.getDatum().get(GregorianCalendar.MONTH)+1)+"."+
 						t.getDatum().get(GregorianCalendar.YEAR)+".");
 				out.close();
 				UtilsBudzet.postaviLimite(budzet);
