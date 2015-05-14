@@ -11,7 +11,7 @@ import java.awt.EventQueue;
  * @author marcus
  *
  */
-public class Main {
+public class MainGuiControler {
 
 	/**
 	 * staticka metoda koja startuje aplkaciju

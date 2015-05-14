@@ -17,7 +17,7 @@ public class UtilsStatistika {
 		/**
 		 * iznos budzeta kao double
 		 */
-		double budzet = UtilsBudzet.ucitajLimite();
+		double budzet = UtilsBudzet.ucitajLimit();
 		
 		/**
 		 * iznos troskova brige o sebi kao double

@@ -3,22 +3,19 @@ package sistem.utils;
 import java.io.*;
 
 /**
- * klasa koja predstavlja
- * osnovne operacije sa objektima 
- * klase Budzet
+ * klasa koja sadrzi metode
+ * koje postavljaju i ucitavaju budzet
  * @author marcus
  *
  */
-public class UtilsBudzet implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class UtilsBudzet {
 
 	/**
 	 * javna metoda koja upisuje iznos budzeta
 	 * kao limit
-	 * @param budzet, kao objekat klase Budzet
+	 * @param iznos, kao double
 	 */
-	public static void postaviLimite(double iznos){
+	public static void postaviLimit(double iznos){
 		try {
 				FileWriter file = new FileWriter("data/limiti.data");
 				PrintWriter out = new PrintWriter(file);
@@ -35,7 +32,7 @@ public class UtilsBudzet implements Serializable {
 	 * javna metoda koja ucitava budzet iz fajla
 	 * @return iznos budzeta kao double vrednost
 	 */
-	public static double ucitajLimite(){
+	public static double ucitajLimit(){
 		double iznos = 0;
 		try {
 			BufferedReader  in = new BufferedReader(

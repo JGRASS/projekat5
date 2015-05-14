@@ -18,11 +18,11 @@ public class UtilsTroskovi {
 	/**
 	 * metoda koja prima objekat troska i 
 	 * putanju za cuvanje troska
-	 * @param o kao objekat
+	 * @param t kao objekat klase Troskovi
 	 * @param path kao string
 	 */
 	public static void konvertujTroskove(Troskovi t, String path){
-		double budzet = UtilsBudzet.ucitajLimite();
+		double budzet = UtilsBudzet.ucitajLimit();
 		double trosak = t.getIznos();
 		double ukupno;
 		ukupno = budzet - trosak;
@@ -41,7 +41,7 @@ public class UtilsTroskovi {
 						t.getDatum().get(GregorianCalendar.MONTH)+1)+"."+
 						t.getDatum().get(GregorianCalendar.YEAR)+".");
 				out.close();
-				UtilsBudzet.postaviLimite(budzet);
+				UtilsBudzet.postaviLimit(budzet);
 			} 
 			catch (Exception e) {
 				e.printStackTrace();
@@ -52,8 +52,8 @@ public class UtilsTroskovi {
 	
 	/**
 	 * metoda koja ucitava troskove
-	 * @param path kaos tring putanje ka fajlu
-	 * @return ucitan iznos kao double
+	 * @param path kao string putanje ka fajlu
+	 * @return ucitan iznos kao String
 	 */
 	public static String ucitajTroskove(String path){
 		BufferedReader in;
@@ -69,6 +69,9 @@ public class UtilsTroskovi {
 		return txt;
 	}
 	
+	/**
+	 * metoda koja kreira fajlove za upisivanje troskova
+	 */
 	public static void kreirajFajlove(){
 		
 		try {
